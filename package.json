@@ -1,0 +1,19 @@
+{
+  "name": "shindig",
+  "version": "0.0.1",
+  "description": "An app for events with fellow Northwesterners",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DJCubed/shindig"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DJCubed/shindig/issues"
+  },
+  "homepage": "https://github.com/DJCubed/shindig"
+}
