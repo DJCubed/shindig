@@ -1,0 +1,21 @@
+{
+  "name": "shindig",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DJCubed/shindig",
+  "authors": [
+    "JamesDLorence <jamesdlorence@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "backbone": "~1.1.2",
+    "foundation": "zurb/bower-foundation"
+  }
+}
