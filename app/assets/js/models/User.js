@@ -9,6 +9,6 @@ module.exports = Backbone.Model.extend({
     last_name: '',
     email: '',
     username:'',
-    interests:[]
+    interests: []
   }
 });
