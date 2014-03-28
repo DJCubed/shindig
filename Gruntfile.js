@@ -11,6 +11,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-mongoimport');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -58,9 +59,6 @@ module.exports = function(grunt) {
       }
     },
     sass: {
-      options: {
-        includePaths: ['bower_components/foundation/scss']
-      },
       dist: {
         files: {'build/css/styles.css': 'app/assets/scss/styles.scss'}
       },
@@ -84,11 +82,11 @@ module.exports = function(grunt) {
     },
     watch:{
       all:{
-        files:['app.js', 'api/models/*.js'],
+        files:['server.js', 'api/models/*.js'],
         tasks:['jshint']
       },
       express: {
-        files:  [ 'app.js','api/**/*','app/assets/**/*','app/*.js' ],
+        files:  [ 'server.js','api/**/*','app/assets/**/*','app/*.js' ],
         tasks:  [ 'clean', 'copy', 'browserify:dev', 'express:dev' ],
         options: {
           // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
@@ -103,23 +101,23 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
-          script: 'app.js'
+          script: 'server.js'
         }
       },
       prod: {
         options: {
-          script: 'app.js',
+          script: 'server.js',
           node_env: 'production'
         }
       },
       test: {
         options: {
-          script: 'app.js'
+          script: 'server.js'
         }
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'app.js', 'api/models/**/*.js', 'test/**/*.js'],
+      all: ['Gruntfile.js', 'server.js', 'api/models/**/*.js', 'test/**/*.js'],
       options: {
         jshintrc: true,
         globals: {
@@ -168,12 +166,12 @@ module.exports = function(grunt) {
       }
     },
     concurrent: {
-      buildDev: ['sass:dev', 'browserify:dev', 'jshint']
+      buildDev: ['sass', 'browserify:dev']
     }
   });
 
   //grunt mocha cov
-  grunt.registerTask('server', ['express:dev','watch:express','build:dev']);
+  grunt.registerTask('server', ['build:dev','express:dev','watch:express']);
   //grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
   grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
