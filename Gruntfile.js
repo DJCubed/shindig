@@ -166,14 +166,17 @@ module.exports = function(grunt) {
           // }
         ]
       }
+    },
+    concurrent: {
+      buildDev: ['sass:dev', 'browserify:dev', 'jshint']
     }
   });
 
   //grunt mocha cov
-  grunt.registerTask('server', [ 'express:dev','watch:express' ]);
+  grunt.registerTask('server', ['express:dev','watch:express','build:dev']);
   //grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
-  grunt.registerTask('build:dev',  ['clean:dev', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
   //grunt.registerTask('build:prod', ['clean:prod', 'browserify:prod', 'copy:prod']);
   grunt.registerTask('test', ['simplemocha:dev']);
   // grunt.registerTask('travis', ['jshint', 'mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
