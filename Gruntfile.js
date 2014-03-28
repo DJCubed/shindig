@@ -57,6 +57,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      options: {
+        includePaths: ['bower_components/foundation/scss']
+      },
+      dist: {
+        files: {'build/css/styles.css': 'app/assets/scss/styles.scss'}
+      },
+      dev: {
+        options: {
+          includePaths: ['app/assets/scss/'],
+          sourceComments: 'map'
+        },
+        files: {'build/css/styles.css': 'app/assets/scss/styles.scss'}
+      }
+    },
     simplemocha:{
       dev:{
         src:['test/*_test.js','!test/acceptance/*_test.js'],
@@ -151,14 +166,17 @@ module.exports = function(grunt) {
           // }
         ]
       }
+    },
+    concurrent: {
+      buildDev: ['sass:dev', 'browserify:dev', 'jshint']
     }
   });
 
   //grunt mocha cov
-  grunt.registerTask('server', [ 'express:dev','watch:express' ]);
+  grunt.registerTask('server', ['express:dev','watch:express','build:dev']);
   //grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
-  //grunt.registerTask('build:dev',  ['clean:dev', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
   //grunt.registerTask('build:prod', ['clean:prod', 'browserify:prod', 'copy:prod']);
   grunt.registerTask('test', ['simplemocha:dev']);
   // grunt.registerTask('travis', ['jshint', 'mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
