@@ -86,8 +86,8 @@ module.exports = function(grunt) {
         tasks:['jshint']
       },
       express: {
-        files:  [ 'server.js','api/**/*','app/assets/**/*','app/*.js' ],
-        tasks:  [ 'clean', 'copy', 'browserify:dev', 'express:dev' ],
+        files:  ['server.js','api/**/*','app/assets/**/*'],
+        tasks:  ['clean', 'copy', 'sass:dev', 'browserify:dev', 'express:dev'],
         options: {
           // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
           // Without this option specified express won't be reloaded
