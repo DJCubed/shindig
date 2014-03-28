@@ -28,7 +28,6 @@ describe('Users JSON api', function(){
         expect(res.body.first_name).to.be.eql('Jonah');
         expect(res.body.last_name).to.be.eql('Kirangi');
         id = res.body._id;
-
         done();
       });
   });
@@ -37,7 +36,6 @@ describe('Users JSON api', function(){
     superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
       expect(e).to.eql(null);
       expect(res.body.length).to.be.above(0);
-
       done();
     });
   });
@@ -48,7 +46,6 @@ describe('Users JSON api', function(){
       expect(res.body._id).to.be.eql(id);
       expect(res.body.first_name).to.be.eql('Jonah');
       expect(res.body.last_name).to.be.eql('Kirangi');
-
       done();
     });
   });

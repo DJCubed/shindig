@@ -26,6 +26,18 @@ app.put('/api/v1/users/:id', users.updateUser);
 
 app.delete('/api/v1/users/:id', users.deleteUser);
 
+var shindigs = require('./api/routes/shindigs');
+
+app.get('/api/v1/shindigs', shindigs.collection);
+
+app.post('/api/v1/shindigs', shindigs.createShindig);
+
+app.get('/api/v1/shindigs/:id', shindigs.findShindigById);
+
+app.put('/api/v1/shindigs/:id', shindigs.updateShindig);
+
+app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);
+
 var server = http.createServer(app);
 server.listen(3000, function(){
    console.log("server running");
