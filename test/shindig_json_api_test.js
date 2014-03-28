@@ -17,16 +17,17 @@ describe('Users JSON api', function(){
         date: 'Sept 65, 1898',
         time: '2pm',
         location:'Belltown Billiards',
-        participants: [],
-        description: '',
-        interests: [],
-        owner: ''
+        participants: ['Jonah', 'Dale', 'JD'],
+        description: 'Awesome event',
+        interests: ['biking', 'swimming'],
+        owner: 'Jessica'
       })
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body._id).to.not.be.eql(null);
-        expect(res.body.first_name).to.be.eql('Jonah');
-        expect(res.body.last_name).to.be.eql('Kirangi');
+        expect(res.body.title).to.be.eql('Bowling at Belltown');
+        expect(res.body.date).to.be.eql('Sept 65, 1898');
+        expect(res.body.interests).to.be.eql(['biking', 'swimming']);
         id = res.body._id;
         done();
       });
