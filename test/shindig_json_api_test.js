@@ -6,7 +6,7 @@ var chai = require('chai'),
   should = chai.should();
 var app = require('../server').app;
 
-describe('Users JSON api', function(){
+describe('shindigs JSON api', function(){
   var id;
 
   it('can create a new shindig', function(done){
@@ -33,49 +33,40 @@ describe('Users JSON api', function(){
       });
   });
 
-  // it('can get users collection', function(done){
-  //   superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
-  //     expect(e).to.eql(null);
-  //     expect(res.body.length).to.be.above(0);
-  //     done();
-  //   });
-  // });
+  it('can get shindigs collection', function(done){
+    superagent.get('http://localhost:3000/api/v1/shindigs').end(function(e, res){
+      expect(e).to.eql(null);
+      expect(res.body.length).to.be.above(0);
+      done();
+    });
+  });
 
-  // it('can get a single user', function(done){
-  //   superagent.get('http://localhost:3000/api/v1/users/' + id).end(function(e, res){
-  //     expect(e).to.eql(null);
-  //     expect(res.body._id).to.be.eql(id);
-  //     expect(res.body.first_name).to.be.eql('Jonah');
-  //     expect(res.body.last_name).to.be.eql('Kirangi');
-  //     done();
-  //   });
-  // });
+  it('can get a single shindig', function(done){
+    superagent.get('http://localhost:3000/api/v1/shindigs/' + id).end(function(e, res){
+      expect(e).to.eql(null);
+      expect(res.body._id).to.be.eql(id);
+      expect(res.body.title).to.be.eql('Bowling at Belltown');
+      expect(res.body.date).to.be.eql('Sept 65, 1898');
+      done();
+    });
+  });
 
-  // // it('does not reveal the password hash for a user', function(done) {
-  // //   superagent.get('http://localhost:3000/api/v1/users/' + id).end(function(e, res){
-  // //     if (res.body.local) {
-  // //       expect(res.body.local.password).to.eql('[FILTERED]');
-  // //     }
-  // //     done();
-  // //   });
-  // // });
+  it('can update an shindig', function(done){
+    superagent.put('http://localhost:3000/api/v1/shindigs/' + id).send({title: 'Bowling at Ballard', date: 'Sept 65, 1998'})
+    .end(function(e,res){
+      expect(e).to.eql(null);
+      expect(res.body.msg).to.be.eql('success');
 
-  // it('can update a user', function(done){
-  //   superagent.put('http://localhost:3000/api/v1/users/' + id).send({first_name: 'JD', last_name: 'Lorence'})
-  //   .end(function(e,res){
-  //     expect(e).to.eql(null);
-  //     expect(res.body.msg).to.be.eql('success');
+      done();
+    });
+  });
 
-  //     done();
-  //   });
-  // });
+  it('can delete a shindig' , function(done){
+    superagent.del('http://localhost:3000/api/v1/shindigs/' + id).end(function(e,res){
+      expect(e).to.eql(null);
+      expect(res.body.msg).to.be.eql('success');
 
-  // it('can delete a user' , function(done){
-  //   superagent.del('http://localhost:3000/api/v1/users/' + id).end(function(e,res){
-  //     expect(e).to.eql(null);
-  //     expect(res.body.msg).to.be.eql('success');
-
-  //     done();
-  //   });
-  // });
+      done();
+    });
+  });
  });
