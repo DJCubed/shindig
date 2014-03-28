@@ -11,6 +11,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-mongoimport');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -58,9 +59,6 @@ module.exports = function(grunt) {
       }
     },
     sass: {
-      options: {
-        includePaths: ['bower_components/foundation/scss']
-      },
       dist: {
         files: {'build/css/styles.css': 'app/assets/scss/styles.scss'}
       },
@@ -168,12 +166,12 @@ module.exports = function(grunt) {
       }
     },
     concurrent: {
-      buildDev: ['sass:dev', 'browserify:dev', 'jshint']
+      buildDev: ['sass', 'browserify:dev']
     }
   });
 
   //grunt mocha cov
-  grunt.registerTask('server', ['express:dev','watch:express','build:dev']);
+  grunt.registerTask('server', ['build:dev','express:dev','watch:express']);
   //grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
   grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);

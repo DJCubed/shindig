@@ -6,7 +6,7 @@ Base style sheet
 $Imports
 ------------------------------*/
 
-@import "foundation/components/grid";
+@import "../../../bower_components/foundation/scss/foundation/components/grid";
 @import "index.scss";
-@import "reset.scss"
+@import "reset.scss";
 
