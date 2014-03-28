@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     clean: {
       build: ['build'],
       dev: {
-        src: ['build/app.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
+        src: ['build/server.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
       },
       prod: ['dist']
     },
@@ -84,11 +84,11 @@ module.exports = function(grunt) {
     },
     watch:{
       all:{
-        files:['app.js', 'api/models/*.js'],
+        files:['server.js', 'api/models/*.js'],
         tasks:['jshint']
       },
       express: {
-        files:  [ 'app.js','api/**/*','app/assets/**/*','app/*.js' ],
+        files:  [ 'server.js','api/**/*','app/assets/**/*','app/*.js' ],
         tasks:  [ 'clean', 'copy', 'browserify:dev', 'express:dev' ],
         options: {
           // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
@@ -103,23 +103,23 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
-          script: 'app.js'
+          script: 'server.js'
         }
       },
       prod: {
         options: {
-          script: 'app.js',
+          script: 'server.js',
           node_env: 'production'
         }
       },
       test: {
         options: {
-          script: 'app.js'
+          script: 'server.js'
         }
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'app.js', 'api/models/**/*.js', 'test/**/*.js'],
+      all: ['Gruntfile.js', 'server.js', 'api/models/**/*.js', 'test/**/*.js'],
       options: {
         jshintrc: true,
         globals: {
@@ -149,21 +149,21 @@ module.exports = function(grunt) {
       // stopOnError : false,
         collections : [
           {
-            name : 'works',
+            name : 'users',
             type : 'json',
             file : 'db/seeds/works.json',
             jsonArray : true,  //optional
             upsert : true,  //optional
             drop : true  //optional
           },
-          // {
-          //   name : 'meetings',
-          //   type :'json',
-          //   file : 'db/seeds/meetings.json',
-          //   jsonArray : true,
-          //   upsert : true,
-          //   drop : true
-          // }
+          {
+            name : 'events',
+            type : 'json',
+            file : 'db/seeds/works.json',
+            jsonArray : true,
+            upsert : true,
+            drop : true
+          }
         ]
       }
     },
