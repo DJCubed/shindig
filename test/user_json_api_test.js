@@ -15,10 +15,12 @@ describe('Users JSON api', function(){
         {
         first_name: 'Jonah',
         last_name: 'Kirangi',
-        local: {
-          email: 'jk@example.com',
-          password: 'valid_password'
+        email: 'jk@example.com',
+        username:'Jonah',
+        auth: {
+          password: 'valid'
         },
+        interests: ['skiing', 'biking']
       })
       .end(function(e, res){
         expect(e).to.eql(null);
