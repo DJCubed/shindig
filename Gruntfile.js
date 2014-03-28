@@ -24,16 +24,16 @@ module.exports = function(grunt) {
     copy: {
       prod: {
         expand: true,
-        cwd: 'app/assets',
-        src: ['/css/*.css', '*.html', '/images/**/*' ],
+        cwd: 'app/assets/',
+        src: ['*.html', 'images/**/*' ],
         dest: 'dist/',
         flatten: true,
         filter: 'isFile'
       },
       dev: {
         expand: true,
-        cwd: 'app/assets',
-        src: ['/css/*.css', '*.html', '/images/**/*' ],
+        cwd: 'app/assets/',
+        src: ['*.html', 'images/**/*' ],
         dest: 'build/',
         flatten: true,
         filter: 'isFile'
@@ -178,7 +178,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['test','watch:express']);
   grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
   //grunt.registerTask('build:prod', ['clean:prod', 'browserify:prod', 'copy:prod']);
-  grunt.registerTask('test', ['simplemocha:dev']);
+  grunt.registerTask('test', ['simplemocha:dev', 'casper']);
   // grunt.registerTask('travis', ['jshint', 'mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   //grunt.registerTask('travis', ['jshint']);
 
