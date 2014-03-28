@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     clean: {
       build: ['build'],
       dev: {
-        src: ['build/app.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
+        src: ['build/server.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
       },
       prod: ['dist']
     },
@@ -147,21 +147,21 @@ module.exports = function(grunt) {
       // stopOnError : false,
         collections : [
           {
-            name : 'works',
+            name : 'users',
             type : 'json',
             file : 'db/seeds/works.json',
             jsonArray : true,  //optional
             upsert : true,  //optional
             drop : true  //optional
           },
-          // {
-          //   name : 'meetings',
-          //   type :'json',
-          //   file : 'db/seeds/meetings.json',
-          //   jsonArray : true,
-          //   upsert : true,
-          //   drop : true
-          // }
+          {
+            name : 'events',
+            type : 'json',
+            file : 'db/seeds/works.json',
+            jsonArray : true,
+            upsert : true,
+            drop : true
+          }
         ]
       }
     },
