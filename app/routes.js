@@ -3,14 +3,13 @@
 'use strict';
 
 module.exports = function(app, passport) {
-
   // display the login form
   app.get('/login', function(req, res) {
 
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
 			partials: {'content': 'login'},
-			message: req.flash('loginMessage')
+			message: 'hello'
 		});
 	});
 
@@ -32,12 +31,12 @@ module.exports = function(app, passport) {
     }));
 
   // display signup form
-  app.get('/signup', function(req, res) {
+  app.get('/register', function(req, res) {
 
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
-			partials: {'content': 'signup',},
-			message: req.flash('signupMessage')
+			partials: {'content': 'register',},
+			message: 'hello'
 		});
 	});
 

@@ -1,8 +1,18 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-
 var app = express();
+var cons = require('consolidate');
+var users = require('./api/routes/users');
+var passport = require('passport');
+var mongoose = require('mongoose');
+
+
+
+app.engine('hbs', cons.handlebars);
+  app.set('view engine', 'hbs');
+  app.set('views', __dirname + '/app/assets/templates');
+
 
 app.configure(function(){
   app.use(express.bodyParser());
@@ -14,10 +24,8 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-var users = require('./api/routes/users');
-var passport = require('passport');
-var flash    = require('connect-flash');
-var mongoose = require('mongoose');
+
+
 require('./config/passport')(passport);
 
 require('./app/routes')(app, passport);
