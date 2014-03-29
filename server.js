@@ -15,6 +15,12 @@ app.configure('development', function(){
 });
 
 var users = require('./api/routes/users');
+var passport = require('passport');
+var flash    = require('connect-flash');
+var mongoose = require('mongoose');
+require('./config/passport')(passport);
+
+require('./app/routes')(app, passport);
 
 app.get('/api/v1/users', users.collection);
 
