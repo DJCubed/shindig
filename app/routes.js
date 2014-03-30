@@ -12,6 +12,17 @@ module.exports = function(app, passport) {
 		failureFlash : true // allow flash messages
 	}));
 
+	// process the signup form
+    app.post('/register', passport.authenticate('local-signup', {
+        // redirect to the secure profile section
+        successRedirect : '/survey',
+        // redirect back to the signup page if there is an error
+        failureRedirect : '/register',
+        // allow flash messages
+        failureFlash : true
+        }));
+
+
 	 // display registration form
   app.get('/register', function(req, res) {
 
@@ -31,6 +42,16 @@ module.exports = function(app, passport) {
 			subTitle: 'Survey'
 		});
 	});
+
+  // process the signup form
+    app.post('/survey', passport.authenticate('local-signup', {
+        // redirect to the secure profile section
+        successRedirect : '/shingList',
+        // redirect back to the signup page if there is an error
+        failureRedirect : '/survey',
+        // allow flash messages
+        failureFlash : true
+        }));
 
   // display shindig
   app.get('/shindig', function(req, res) {

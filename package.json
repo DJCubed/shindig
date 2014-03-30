@@ -8,10 +8,11 @@
     "express": "3.5.1",
     "mongodb": "*",
     "mongoose": "*",
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt-nodejs": "latest",
     "passport-local": "^1.0.0",
     "passport": "^0.2.0",
     "passport-twitter": "^1.0.2",
+    "passport-google-oauth":"~0.1.5",
     "connect-flash": "^0.1.1",
     "consolidate": "^0.10.0"
   },

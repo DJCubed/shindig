@@ -6,8 +6,7 @@ var cons = require('consolidate');
 var users = require('./api/routes/users');
 var passport = require('passport');
 var mongoose = require('mongoose');
-
-
+var flash = require('connect-flash');
 
 app.engine('hbs', cons.handlebars);
   app.set('view engine', 'hbs');
@@ -22,6 +21,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
+  app.use(express.logger('dev'));
 });
 
 

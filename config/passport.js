@@ -3,7 +3,6 @@
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
-
 // load the auth variables
 var configAuth = require('./auth');
 
@@ -40,7 +39,7 @@ module.exports = function(passport) {
     passReqToCallback : true // allows us to pass back the entire request to the callback
   },
   function(req, email, password, done) {
-
+    console.log('passport opened');
     // asynchronous
     // User.findOne wont fire unless data is sent back
     process.nextTick(function() {

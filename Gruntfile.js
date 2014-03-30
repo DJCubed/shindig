@@ -12,6 +12,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-mongoimport');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-notify');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -126,6 +127,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    notify: {
+      server: {
+        options: {
+          message: 'Server is ready'
+        }
+      },
+      express: {
+        options: {
+          message: 'express is ready'
+        }
+      },
+      watch: {
+        options: {
+          message: 'watch'
+        }
+      }
+    },
     casper: {
       acceptance : {
         options : {
@@ -171,7 +189,7 @@ module.exports = function(grunt) {
   });
 
   //grunt mocha cov
-  grunt.registerTask('server', ['build:dev','express:dev','watch:express']);
+  grunt.registerTask('server', ['build:dev','express:dev','watch:express','notify']);
   //grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
   grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
