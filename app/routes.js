@@ -3,77 +3,43 @@
 'use strict';
 
 module.exports = function(app, passport) {
-  // display the login form
-  app.get('/login', function(req, res) {
+  
 
-		// render the page and pass in any flash data if it exists
-		res.render('index', {
-			partials: {'content': 'login'},
-			message: 'hello'
-		});
-	});
-
-	// process the login form
-	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/profile', // redirect to the secure profile section
-		failureRedirect : '/login', // redirect back to the signup page if there is an error
+	// process the registration form
+	app.post('/saveNewUser', passport.authenticate('local-login', {
+		successRedirect : '/survey', // redirect to the secure profile section
+		failureRedirect : '/register', // redirect back to the registration page if error
 		failureFlash : true // allow flash messages
 	}));
 
-	// route for twitter authentication and login
-  app.get('/auth/twitter', passport.authenticate('twitter'));
-
-  // handle the callback after twitter has authenticated the user
-  app.get('/auth/twitter/callback',
-    passport.authenticate('twitter', {
-      successRedirect : '/profile',
-      failureRedirect : '/'
-    }));
-
-  // display signup form
+	 // display registration form
   app.get('/register', function(req, res) {
 
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
 			partials: {'content': 'register',},
-			message: 'hello'
+			subTitle: 'Registration'
 		});
 	});
 
-	// process the signup form
-	app.post('/signup', passport.authenticate('local-signup', {
-		// redirect to the secure profile section
-		successRedirect : '/profile',
-		// redirect back to the signup page if there is an error
-		failureRedirect : '/signup',
-		// allow flash messages
-		failureFlash : true
-	}));
+	 // display survey form
+  app.get('/survey', function(req, res) {
 
-	// PROFILE SECTION
-	// we will want this protected so you have to be logged in to visit
-	// we will use route middleware to verify this (the isLoggedIn function)
-	app.get('/profile', isLoggedIn, function(req, res) {
+		// render the page and pass in any flash data if it exists
 		res.render('index', {
-      partials: {'content': 'profile',},
-      // get the user out of session and pass to template
-			user : req.user
+			partials: {'content': 'survey',},
+			subTitle: 'Survey'
 		});
 	});
 
-	app.get('/logout', function(req, res) {
-		req.logout();
-		res.redirect('/');
+  // display shindig
+  app.get('/shindig', function(req, res) {
+
+		// render the page and pass in any flash data if it exists
+		res.render('index', {
+			partials: {'content': 'shindig',},
+			subTitle: 'Shindig'
+		});
 	});
+
 };
-
-// route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
-
-	// if user is authenticated in the session, carry on
-	if (req.isAuthenticated())
-		return next();
-
-	// if they aren't redirect them to the home page
-	res.redirect('/login');
-}
