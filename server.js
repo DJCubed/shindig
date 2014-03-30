@@ -14,21 +14,25 @@ app.engine('hbs', cons.handlebars);
 
 
 app.configure(function(){
-  app.use(express.bodyParser());
+  app.use(express.bodyParser());//get html forms info
   app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.cookieParser());//For authorization
+  app.use(express.session({
+  	secret: 'shindigisgoodshindigisdopeshin'
+  }));
+  app.use(passport.initialize());
+  app.use(passport.session());//to persist login sessions
+  app.use(flash());//for session flash messages
   app.use(app.router);
 });
 
 app.configure('development', function(){
   app.use(express.errorHandler());
-  app.use(express.logger('dev'));
+  app.use(express.logger('dev'));//log request to terminal
 });
 
 
-
-require('./config/passport')(passport);
-
-require('./app/routes')(app, passport);
+require('./app/routes')(app, passport);//pass passport to routes.js
 
 app.get('/api/v1/users', users.collection);
 
