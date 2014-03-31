@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/shindig-development');
-
 var schema = new mongoose.Schema({
   first_name: '',
   last_name: '',
