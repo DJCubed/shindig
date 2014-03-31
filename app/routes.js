@@ -4,20 +4,16 @@
 
 module.exports = function(app, passport) {
   
-	app.get('/login', function(req, res) {
-		res.render('login', { 
-			message: req.flash('loginMessage') }); 
-	});
-
+	app.post('/login', passport.authenticate('local-login', {
+        // redirect to the secure profile section
+        successRedirect : '/shindigList',
+        // redirect back to the signup page if there is an error
+        failureRedirect : '/register',
+        // allow flash messages
+        failureFlash : true
+        }));
 
 	// process the registration form
-	app.post('/saveNewUser', passport.authenticate('local-login', {
-		successRedirect : '/survey', // redirect to the secure profile section
-		failureRedirect : '/register', // redirect back to the registration page if error
-		failureFlash : true // allow flash messages
-	}));
-
-	// process the signup form
     app.post('/register', passport.authenticate('local-signup', {
         // redirect to the secure profile section
         successRedirect : '/survey',
@@ -30,11 +26,11 @@ module.exports = function(app, passport) {
 
 	 // display registration form
   app.get('/register', function(req, res) {
-
-		// render the page and pass in any flash data if it exists
+		// render the page
 		res.render('index', {
 			partials: {'content': 'register',},
-			subTitle: 'Registration'
+			subTitle: 'Registration',
+			message: req.flash('signupMessage')
 		});
 	});
 
@@ -48,7 +44,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
-  // process the signup form
+  // process the survey form
     app.post('/survey', passport.authenticate('local-signup', {
         // redirect to the secure profile section
         successRedirect : '/shingList',
@@ -58,24 +54,25 @@ module.exports = function(app, passport) {
         failureFlash : true
         }));
 
-  // display shindig
-  app.get('/shindig', function(req, res) {
+  // display shindigList
+  app.get('/shindigList', isLoggedIn, function(req, res) {
 
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
-			partials: {'content': 'shindig',},
-			subTitle: 'Shindig'
+			partials: {'content': 'shindigList',},
+			subTitle: 'ShindigList',
+			username: req.user //get the user name from session
 		});
 	});
 
-   app.get('/logout', function(req, res) {
+   app.post('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
 
 };
 
-// route middleware to make sure a user is logged in
+// Make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
 	// if user is authenticated in the session, carry on 

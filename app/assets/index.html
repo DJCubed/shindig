@@ -33,12 +33,12 @@
 
         <h3 id="sign-in">Sign In</h3>
 
-        <form>
-          <input type="text" value="Email or Username">
-          <input type="text" value="Password">
+        <form action = "/login" method = "post">
+          <input type="text" id="email" name="email" placeholder="Email or Username">
+          <input type="text" id="password" name="password" placeholder="Password">
         </form>
 
-        <button>Go!</button>
+        <button type="submit" class="login_button">Go!</button>
         <button><a href="/register">Join</a></button>
 
       </div>
