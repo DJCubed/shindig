@@ -166,7 +166,7 @@ module.exports = function(grunt) {
       }
     },
     concurrent: {
-      buildDev: ['sass', 'browserify:dev']
+      buildDev: ['sass:dev', 'browserify:dev']
     }
   });
 
