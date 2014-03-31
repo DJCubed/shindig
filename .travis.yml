@@ -11,6 +11,8 @@ install:
 before_script:
 - grunt mongoimport
 - grunt build:dev
+notifications:
+  email: false
 env:
   global:
     secure: SET_YOUR_OWN_COVERALLS_KEY_HERE_WITH_TRAVIS_GEM
