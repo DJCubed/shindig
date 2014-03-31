@@ -4,6 +4,16 @@
 
 module.exports = function(app, passport) {
   
+	 // display index page
+  app.get('/', function(req, res) {
+		// render the page
+		res.render('index', {
+			partials: {'content': 'login',},
+			subTitle: 'Login',
+			message: req.flash('signupMessage')
+		});
+	});
+
 	app.post('/login', passport.authenticate('local-login', {
         // redirect to the secure profile section
         successRedirect : '/shindigList',
