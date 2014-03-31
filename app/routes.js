@@ -10,7 +10,17 @@ module.exports = function(app, passport) {
 		res.render('index', {
 			partials: {'content': 'login',},
 			subTitle: 'Login',
-			message: req.flash('signupMessage')
+			message: req.flash('loginMessage')
+		});
+	});
+
+  	// display login form
+  	app.get('/login', function(req, res) {
+		// render the page
+		res.render('index', {
+			partials: {'content': 'login',},
+			subTitle: 'Login',
+			message: req.flash('loginMessage')
 		});
 	});
 
@@ -18,7 +28,7 @@ module.exports = function(app, passport) {
         // redirect to the secure profile section
         successRedirect : '/shindigList',
         // redirect back to the signup page if there is an error
-        failureRedirect : '/register',
+        failureRedirect : '/login',
         // allow flash messages
         failureFlash : true
         }));
@@ -71,7 +81,7 @@ module.exports = function(app, passport) {
 		res.render('index', {
 			partials: {'content': 'shindigList',},
 			subTitle: 'ShindigList',
-			username: req.user //get the user name from session
+			username: req.user.local.email //get the userlogin doc from session
 		});
 	});
 
