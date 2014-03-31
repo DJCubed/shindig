@@ -54,6 +54,8 @@ app.post('/api/v1/shindigs', shindigs.createShindig);
 
 app.get('/api/v1/shindigs/:id', shindigs.findShindigById);
 
+app.get('api/v1/shindigs/:interests/shindigs', shindigs.findShindigByInterests);
+
 app.put('/api/v1/shindigs/:id', shindigs.updateShindig);
 
 app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);

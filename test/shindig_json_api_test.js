@@ -8,6 +8,7 @@ var app = require('../server').app;
 
 describe('shindigs JSON api', function(){
   var id;
+  var interests = 'swimming';
 
   it('can create a new shindig', function(done){
     superagent.post('http://localhost:3000/api/v1/shindigs')
@@ -19,15 +20,15 @@ describe('shindigs JSON api', function(){
         location:'Belltown Billiards',
         participants: ['Jonah', 'Dale', 'JD'],
         description: 'Awesome event',
-        interests: ['biking', 'swimming'],
-        owner: 'Jessica'
+        _interests: 'swimming',
+        _owner: 'Jessica'
       })
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body._id).to.not.be.eql(null);
         expect(res.body.title).to.be.eql('Bowling at Belltown');
         expect(res.body.date).to.be.eql('Sept 65, 1898');
-        expect(res.body.interests).to.be.eql(['biking', 'swimming']);
+        expect(res.body._interests).to.be.eql('swimming');
         id = res.body._id;
         done();
       });
@@ -47,6 +48,17 @@ describe('shindigs JSON api', function(){
       expect(res.body._id).to.be.eql(id);
       expect(res.body.title).to.be.eql('Bowling at Belltown');
       expect(res.body.date).to.be.eql('Sept 65, 1898');
+      done();
+    });
+  });
+
+  it('can get all shindigs with specific interests', function(done){
+    superagent.get('http://localhost:3000/api/v1/shindigs/' + interests).end(function(e, res){
+      //expect(e).to.eql(null);
+      console.log(res.body);
+      //expect(res.body.interests).to.be.eql(interests);
+      //expect(res.body.title).to.be.eql('Bowling at Belltown');
+      //expect(res.body.date).to.be.eql('Sept 65, 1898');
       done();
     });
   });

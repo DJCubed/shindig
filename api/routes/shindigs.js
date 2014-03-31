@@ -40,6 +40,18 @@ exports.findShindigById = function(req, res){
   });
 };
 
+exports.findShindigByInterests = function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  console.log(interests);
+  Shindig.find({'_interests': req.params._interests}, function(err, responseShindig) {
+    if(err) {
+      res.send(500, {'error': err});
+    } else {
+      res.send(responseShindig);
+    }
+  });
+};
+
 exports.updateShindig = function(req, res){
   //res.setHeader('Content-Type', 'application/json');
   var id = req.params.id;
