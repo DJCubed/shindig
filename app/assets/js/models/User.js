@@ -1,5 +1,6 @@
 'use strict';
 var Backbone = require('backbone');
+var bcrypt = require('bcrypt-nodejs');
 
 module.exports = Backbone.Model.extend({
   idAttribute: '_id',

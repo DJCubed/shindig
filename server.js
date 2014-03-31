@@ -7,6 +7,7 @@ var users = require('./api/routes/users');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
+require('./config/passport')(passport); // pass passport for configuration
 
 app.engine('hbs', cons.handlebars);
   app.set('view engine', 'hbs');
@@ -31,6 +32,7 @@ app.configure('development', function(){
   app.use(express.logger('dev'));//log request to terminal
 });
 
+mongoose.connect('mongodb://localhost/shindig-development');
 
 require('./app/routes')(app, passport);//pass passport to routes.js
 
