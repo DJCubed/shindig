@@ -1,0 +1,65 @@
+'use strict';
+
+var Shindig = require('../models/Shindig');
+
+exports.collection = function(req, res){
+  res.setHeader('Content-Type', 'application/json');
+  Shindig.find({}, function(err, shindigs){
+    if(err){
+      res.writeHead(500);
+      res.send({'error': err});
+    } else{
+      res.send(shindigs);
+    }
+  });
+};
+
+exports.createShindig = function(req, res){
+  res.setHeader('Content-Type', 'application/json');
+
+  var shindig = new Shindig(req.body);
+  shindig.save(function(err, responseShindig){
+    if(err){
+      res.writeHead(500);
+      res.send({'error': err});
+    } else {
+      res.send(responseShindig);
+    }
+  });
+};
+
+exports.findShindigById = function(req, res){
+  res.setHeader('Content-Type', 'application/json');
+  var id = req.params.id;
+  Shindig.findOne({'_id': String(id)}, function(err, responseShindig){
+    if(err) {
+      res.send({'error': err});
+    } else {
+      res.send(responseShindig);
+    }
+  });
+};
+
+exports.updateShindig = function(req, res){
+  //res.setHeader('Content-Type', 'application/json');
+  var id = req.params.id;
+  var shindig = req.body;
+  Shindig.update({'_id': String(id)}, shindig, function(err){
+    if(err) {
+      res.send({'error': err});
+    } else {
+      res.send({msg: 'success'});
+    }
+  });
+};
+
+exports.deleteShindig = function(req, res){
+  var id = String(req.params.id);
+  Shindig.remove({'_id': id}, function(err){
+    if(err) {
+      res.send({'error': err});
+    } else {
+      res.send({msg: 'success'});
+    }
+  });
+};
