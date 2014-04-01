@@ -42,8 +42,10 @@ exports.findShindigById = function(req, res){
 
 exports.findShindigByInterests = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
+  // request interests from user via passport
+  //req.locals.user.interests
   console.log(interests);
-  Shindig.find({'_interests': req.params._interests}, function(err, responseShindig) {
+  Shindig.find({'_interests': { "$in": req.locals.user.interests } }, function(err, responseShindig) {
     if(err) {
       res.send(500, {'error': err});
     } else {
