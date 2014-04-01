@@ -48,13 +48,13 @@ app.delete('/api/v1/users/:id', users.deleteUser);
 
 var shindigs = require('./api/routes/shindigs');
 
-app.get('/api/v1/shindigs', shindigs.collection);
+//app.get('/api/v1/shindigs', shindigs.collection);
 
 app.post('/api/v1/shindigs', shindigs.createShindig);
 
 app.get('/api/v1/shindigs/:id', shindigs.findShindigById);
 
-app.get('api/v1/shindigs/:interests/shindigs', shindigs.findShindigByInterests);
+app.get('/api/v1/shindigs', shindigs.findShindigByInterests);
 
 app.put('/api/v1/shindigs/:id', shindigs.updateShindig);
 

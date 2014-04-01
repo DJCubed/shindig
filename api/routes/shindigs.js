@@ -1,6 +1,7 @@
 'use strict';
 
 var Shindig = require('../models/Shindig');
+var User = require('../models/User');
 
 exports.collection = function(req, res){
   res.setHeader('Content-Type', 'application/json');
@@ -42,14 +43,13 @@ exports.findShindigById = function(req, res){
 
 exports.findShindigByInterests = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  // request interests from user via passport
-  //req.locals.user.interests
-  console.log(interests);
-  Shindig.find({'_interests': { "$in": req.locals.user.interests } }, function(err, responseShindig) {
-    if(err) {
-      res.send(500, {'error': err});
+  var interests = ['hiking', 'biking'];
+  Shindig.find({'interests': { "$in": interests } },
+  function(err, responseShindigs) {
+    if (err) {
+      res.send({'error': err});
     } else {
-      res.send(responseShindig);
+      res.send(responseShindigs);
     }
   });
 };
