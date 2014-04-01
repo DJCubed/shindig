@@ -1,0 +1,26 @@
+/*-------------------
+General styles
+--------------------*/
+@import "colors.scss";
+
+#banner {
+  background-color: $green;
+}
+
+#shindig {
+  text-align: center;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  margin-top: 5px;
+}
+
+.mainContent {
+  border: 2px solid $orange;
+  border-left: none;
+  border-right: none;
+}
+
+.white {
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}

@@ -12,38 +12,48 @@
 
 <div class="container">
 
+  <div id="banner">
     <!-- want to use Coquette Regular here -->
     <h2 id="shindig">Shindig</h2>
-
     <div class="small-12 large-12 column" id="log"></div>
+  </div>
 
-    <div class="row">
+  <div class="mainContent">
 
+    <div class="row"><!-- 1st row -->
+      <div class="small-12 large-12 column">
+        <p id="description">Meet people like you, <br> doing the stuff you do.</p>
+      </div>
+    </div><!-- end of 1st row -->
+
+    <div class"row"><!-- 2nd row -->
       <div class="small-12 large-12 column">
 
-        <p>Meet people like you doing the stuff you do.</p>
+        <div id="loginBox">
+          <h4 id="signIn">Sign In</h4>
+
+          <form action = "/login" method = "post">
+            <input type="text" id="email" name="email" placeholder="Email or Username">
+            <br>
+            <input type="text" id="password" name="password" placeholder="Password">
+            <br>
+            <button type="submit" class="login_button"><span class="white">Go!</span></button>
+          </form>
+
+        </div>
 
       </div>
+    </div><!-- end of 2nd row -->
 
-    </div>
+    <div class="row"><!-- 3rd row -->
+      <div class="small-12">
 
-    <div class"row">
-
-      <div class="small-12 large-12 column">
-
-        <h3 id="sign-in">Sign In</h3>
-
-        <form action = "/login" method = "post">
-          <input type="text" id="email" name="email" placeholder="Email or Username">
-          <input type="text" id="password" name="password" placeholder="Password">
-        </form>
-
-        <button type="submit" class="login_button">Go!</button>
-        <button><a href="/register">Join</a></button>
+        <a href="/register" id="createAccount"><button id="createAccountButton"><span class="white">Create an account</span></a></button>
 
       </div>
+    </div><!-- end of 3rd row -->
 
-    </div>
+  </div><!-- end mainContent -->
 
 </div><!-- end container -->
 

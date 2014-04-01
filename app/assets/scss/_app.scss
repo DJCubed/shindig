@@ -1,0 +1,76 @@
+/*-------------------
+App Specific Elements styles
+--------------------*/
+@import "colors.scss";
+
+#description {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 1em;
+}
+
+#loginBox {
+  margin-left: auto;
+  margin-right: auto;
+  height: 140px;
+  width: 200px;
+  border: 3px solid $brown;
+  border-radius: 10px;
+  background-color: $brown;
+}
+
+#signIn {
+  text-align: center;
+  margin-top: 5px;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#email {
+  width: 150px;
+  height: 25px;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+#password {
+  width: 150px;
+  height: 25px;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.login_button {
+  width: 150px;
+  height: 25px;
+  margin-left: 22px;
+  margin-right: 22px;
+  margin-top: 10px;
+  background-color: $green;
+  color: black;
+  border-radius: 5px;
+  font-size: 1.1em;
+  border-color: $green;
+  border: none;
+}
+
+#createAccount {
+  text-decoration: none;
+}
+
+#createAccountButton {
+  margin-top: 10%;
+  margin-right: auto;
+  margin-left: 27%;
+  width: 200px;
+  height: 30px;
+  background-color: $green;
+  color: black;
+  border-radius: 5px;
+  font-size: 1.1em;
+  border-color: $green;
+  border: none;
+}
+
+
