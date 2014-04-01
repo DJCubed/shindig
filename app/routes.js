@@ -36,7 +36,7 @@ module.exports = function(app, passport) {
 	// process the registration form
     app.post('/register', passport.authenticate('local-signup', {
         // redirect to the secure profile section
-        successRedirect : '/survey',
+        successRedirect : '/shindigList',
         // redirect back to the signup page if there is an error
         failureRedirect : '/register',
         // allow flash messages

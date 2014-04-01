@@ -14,8 +14,8 @@
 			<label for="name">Last name</label><br>
 			<input class="shortInput" name="last_name" id="last_name" type="text"><br>
 
-			<label for="name">User name</label><br>
-			<input class="shortInput" name="displayName" id="displayName" type="text"><br>
+			<label for="name">Display name</label><br>
+			<input class="shortInput" name="display_name" id="displayName" type="text"><br>
 
 			<label for="email">Email</label><br>
 			<input class="shortInput" name="email" id="email" type="text"><br>
@@ -25,12 +25,41 @@
 
 			<label for="confirmPassword">Confirm password</label><br>
 			<input type="password" name="confirmPassword" class="shortInput" id="confirmPassword" type="text"><br>
-
+			<div class = 'survey'>
+				<h1 class="largeHeader">Survey</h1>
+				<div class="small-12 column">
+      			<p>Answer these questions to find local events that fit your interests.</p>
+      			</div>
+				<ol>
+          			<li >I like Coffee<br>
+          				<input id="q1" name="q1" type="radio">True
+          			</li>
+          			<li >I am very active<br>
+          				<input id="q2" name="q2" type="radio">True
+          			</li>
+          			<li >I Hate Smokers<br>
+          				<input id="q3" name="q3" type="radio">True
+          			</li>
+          			<li >I drink a lot of Beer<br>
+          				<input id="q4" name="q4" type="radio">True
+          			</li>
+          			<li >I go out every night<br>
+          				<input id="q5" name="q5" type="radio">True
+          			</li>
+          			<li >I am very single<br>
+          				<input id="q6" name="q6" type="radio">True
+          			</li>
+      			</ol>
+			</div>
 			<button type="submit" class="button_register">Register</button>
-
 		</form>
-
+		<p class="flash">{{message}}</p>
 	</div>
+<div class="grid">
+
+	
+    
+  </div>
 
 </div>
 	<!-- end grid -->
