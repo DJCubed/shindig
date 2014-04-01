@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = function(app, passport) {
-  
+
 	 // display index page
   app.get('/', function(req, res) {
 		// render the page
@@ -76,12 +76,11 @@ module.exports = function(app, passport) {
 
   // display shindigList
   app.get('/shindigList', isLoggedIn, function(req, res) {
-
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
 			partials: {'content': 'shindigList',},
 			subTitle: 'ShindigList',
-			username: req.user.local.email //get the userlogin doc from session
+			username: req.user.username //get the userlogin doc from session
 		});
 	});
 
@@ -95,7 +94,7 @@ module.exports = function(app, passport) {
 // Make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-	// if user is authenticated in the session, carry on 
+	// if user is authenticated in the session, carry on
 	if (req.isAuthenticated())
 		return next();
 

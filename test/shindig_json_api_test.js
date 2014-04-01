@@ -34,13 +34,13 @@ describe('shindigs JSON api', function(){
       });
   });
 
-  it('can get shindigs collection', function(done){
-    superagent.get('http://localhost:3000/api/v1/shindigs').end(function(e, res){
-      expect(e).to.eql(null);
-      expect(res.body.length).to.be.above(0);
-      done();
-    });
-  });
+  // it('can get shindigs collection', function(done){
+  //   superagent.get('http://localhost:3000/api/v1/shindigs').end(function(e, res){
+  //     expect(e).to.eql(null);
+  //     expect(res.body.length).to.be.above(0);
+  //     done();
+  //   });
+  // });
 
   it('can get a single shindig', function(done){
     superagent.get('http://localhost:3000/api/v1/shindigs/' + id).end(function(e, res){
@@ -53,7 +53,7 @@ describe('shindigs JSON api', function(){
   });
 
   it('can get all shindigs with specific interests', function(done){
-    superagent.get('http://localhost:3000/api/v1/shindigs/' + interests).end(function(e, res){
+    superagent.get('http://localhost:3000/api/v1/shindigs/').end(function(e, res){
       //expect(e).to.eql(null);
       console.log(res.body);
       //expect(res.body.interests).to.be.eql(interests);

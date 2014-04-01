@@ -2,6 +2,7 @@
 
 var Shindig = require('../models/Shindig');
 var User = require('../models/User');
+var Passport = require('passport');
 
 exports.collection = function(req, res){
   res.setHeader('Content-Type', 'application/json');
@@ -43,12 +44,14 @@ exports.findShindigById = function(req, res){
 
 exports.findShindigByInterests = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var interests = ['hiking', 'biking'];
-  Shindig.find({'interests': { "$in": interests } },
+  //var interests = ['hiking', 'biking'];
+  //Shindig.find({'_interests': { "$in": interests } },
+  Shindig.find({'interests': { "$in": req.user.interests } },
   function(err, responseShindigs) {
     if (err) {
-      res.send({'error': err});
+      res.send({'error': err.stack});
     } else {
+      //console.log(responseShindigs.body);
       res.send(responseShindigs);
     }
   });
