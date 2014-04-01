@@ -69,4 +69,4 @@ describe('shindigs JSON api', function(){
       done();
     });
   });
- });
+});

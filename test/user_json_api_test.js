@@ -81,4 +81,4 @@ describe('Users JSON api', function(){
       done();
     });
   });
- });
+});

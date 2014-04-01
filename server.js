@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -10,8 +12,8 @@ var flash = require('connect-flash');
 require('./config/passport')(passport); // pass passport for configuration
 
 app.engine('hbs', cons.handlebars);
-  app.set('view engine', 'hbs');
-  app.set('views', __dirname + '/app/assets/templates');
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/app/assets/templates');
 
 
 app.configure(function(){
@@ -19,7 +21,7 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'build')));
   app.use(express.cookieParser());//For authorization
   app.use(express.session({
-  	secret: 'shindigisgoodshindigisdopeshin'
+    secret: 'shindigisgoodshindigisdopeshin'
   }));
   app.use(passport.initialize());
   app.use(passport.session());//to persist login sessions
@@ -60,5 +62,5 @@ app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);
 
 var server = http.createServer(app);
 server.listen(3000, function(){
-   console.log("server running");
+  console.log('server running');
 });
