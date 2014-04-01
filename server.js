@@ -36,7 +36,20 @@ app.configure('development', function(){
 
 mongoose.connect('mongodb://localhost/shindig-development');
 
+// Make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+  // if user is authenticated in the session, carry on
+  if (req.isAuthenticated())
+    return next();
+
+  // if they aren't redirect them to the home page
+  res.redirect('/');
+}
+
 require('./app/routes')(app, passport);//pass passport to routes.js
+
+app.get('/api/*', isLoggedIn);
 
 app.get('/api/v1/users', users.collection);
 
@@ -50,11 +63,13 @@ app.delete('/api/v1/users/:id', users.deleteUser);
 
 var shindigs = require('./api/routes/shindigs');
 
-app.get('/api/v1/shindigs', shindigs.collection);
+//app.get('/api/v1/shindigs', shindigs.collection);
 
 app.post('/api/v1/shindigs', shindigs.createShindig);
 
 app.get('/api/v1/shindigs/:id', shindigs.findShindigById);
+
+app.get('/api/v1/shindigs/', shindigs.findShindigByInterests);
 
 app.put('/api/v1/shindigs/:id', shindigs.updateShindig);
 

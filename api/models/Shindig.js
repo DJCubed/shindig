@@ -1,8 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-
-//mongoose.connect('mongodb://localhost/shindig-development');
+//var User = require('User');
 
 var schema = new mongoose.Schema({
   title: '',
@@ -11,8 +10,9 @@ var schema = new mongoose.Schema({
   location:'',
   participants: [],
   description: '',
-  interests: [],
-  owner: ''
+  _interests: '',
+  //owner: ''
+  _owner : ''
 });
 
 module.exports = mongoose.model('Shindig', schema);

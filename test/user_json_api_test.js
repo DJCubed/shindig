@@ -32,9 +32,11 @@ describe('Users JSON api', function(){
       });
   });
 
-  it('can find shindigs with common interests', function() {
-    superagent.get('http://localhost:3000/api/v1/shindigs' //where one interest in the shingdig array matches one interes in the user's array)
-  })
+  // it('can find shindigs with common interests', function() {
+  //   superagent.get('http://localhost:3000/api/v1/users/' + id + interests).end(function(e, res){
+  //     expect(e).to.eql(null);
+  //   });
+  // });
 
   it('can get users collection', function(done){
     superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
