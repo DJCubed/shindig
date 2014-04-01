@@ -8,28 +8,27 @@ var app = require('../server').app;
 
 describe('shindigs JSON api', function(){
   var id;
-  var interests = 'swimming';
+  //var interests = 'swimming';
 
   it('can create a new shindig', function(done){
     superagent.post('http://localhost:3000/api/v1/shindigs')
-      .send(
-        {
+      .send({
         title: 'Bowling at Belltown',
         date: 'Sept 65, 1898',
         time: '2pm',
         location:'Belltown Billiards',
         participants: ['Jonah', 'Dale', 'JD'],
         description: 'Awesome event',
-        _interests: 'swimming',
-        _owner: 'Jessica'
+        interests: ['swimming', 'hipster'],
+        owner: 'Jessica'
       })
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body._id).to.not.be.eql(null);
         expect(res.body.title).to.be.eql('Bowling at Belltown');
         expect(res.body.date).to.be.eql('Sept 65, 1898');
-        expect(res.body._interests).to.be.eql('swimming');
-        id = res.body._id;
+        expect(res.body.interests).to.be.eql(['swimming', 'hipster']);
+        id = "res.body._id";
         done();
       });
   });

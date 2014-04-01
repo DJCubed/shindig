@@ -156,7 +156,7 @@ module.exports = function(grunt) {
     },
     mongoimport: {
       options: {
-        db : 'portfolio-development',
+        db : 'shindig-development',
       // optional
       // host : 'localhost',
       // port: '27017',
@@ -167,15 +167,15 @@ module.exports = function(grunt) {
           {
             name : 'users',
             type : 'json',
-            file : 'db/seeds/works.json',
+            file : 'db/seeds/users.json',
             jsonArray : true,  //optional
             upsert : true,  //optional
             drop : true  //optional
           },
           {
-            name : 'events',
+            name : 'shindigs',
             type : 'json',
-            file : 'db/seeds/works.json',
+            file : 'db/seeds/shindigs.json',
             jsonArray : true,
             upsert : true,
             drop : true

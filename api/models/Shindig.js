@@ -10,7 +10,7 @@ var schema = new mongoose.Schema({
   location:'',
   participants: [],
   description: '',
-  _interests: '',
+  interests: '',
   //owner: ''
   _owner : ''
 });

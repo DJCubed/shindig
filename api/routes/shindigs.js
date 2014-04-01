@@ -44,8 +44,8 @@ exports.findShindigById = function(req, res){
 
 exports.findShindigByInterests = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  //var interests = ['hiking', 'biking'];
-  //Shindig.find({'_interests': { "$in": interests } },
+  var interests = ['hiking', 'biking'];
+  //Shindig.find({'interests': { "$in": interests } },
   Shindig.find({'interests': { "$in": req.user.interests } },
   function(err, responseShindigs) {
     if (err) {

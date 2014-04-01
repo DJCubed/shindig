@@ -49,7 +49,7 @@ function isLoggedIn(req, res, next) {
 
 require('./app/routes')(app, passport);//pass passport to routes.js
 
-app.get('/api/*', isLoggedIn);
+//app.get('/api/*', isLoggedIn);
 
 app.get('/api/v1/users', users.collection);
 
@@ -69,13 +69,15 @@ app.post('/api/v1/shindigs', shindigs.createShindig);
 
 app.get('/api/v1/shindigs/:id', shindigs.findShindigById);
 
-app.get('/api/v1/shindigs/', shindigs.findShindigByInterests);
+app.get('/api/v1/shindigs', shindigs.findShindigByInterests);
 
 app.put('/api/v1/shindigs/:id', shindigs.updateShindig);
 
 app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);
 
+
+
 var server = http.createServer(app);
-server.listen(3000, function(){
+server.listen(3000, function(){ //create secure server here (see oaa secureServer.js)
   console.log('server running');
 });
