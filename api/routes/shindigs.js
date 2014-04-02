@@ -44,14 +44,12 @@ exports.findShindigById = function(req, res){
 
 exports.findShindigByInterests = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var interests = ['hiking', 'biking'];
-  //Shindig.find({'interests': { "$in": interests } },
+  //var interests = ['hiking', 'biking'];
   Shindig.find({'interests': { "$in": req.user.interests } },
   function(err, responseShindigs) {
     if (err) {
       res.send({'error': err.stack});
     } else {
-      //console.log(responseShindigs.body);
       res.send(responseShindigs);
     }
   });
