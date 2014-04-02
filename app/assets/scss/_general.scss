@@ -15,9 +15,10 @@ General styles
 }
 
 .mainContent {
-  border: 2px solid $orange;
+  border: 2px solid $brown;
   border-left: none;
   border-right: none;
+  overflow: scroll;
 }
 
 .white {

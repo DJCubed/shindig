@@ -55,12 +55,25 @@ module.exports = function(passport) {
         else {
           // if there is no user with that email
           // create the user
-          var newUser = new User();
-          newUser.first_name = req.body.first_name;
-          newUser.last_name = req.body.last_name;
-          newUser.email = email;
-          newUser.username = req.body.display_name;
-          newUser.interests = [req.body.q1, req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6];
+          var newUser = new UserLogin();
+          var newUserSet = new User();
+          newUserSet.first_name = req.body.first_name;
+          newUserSet.last_name = req.body.last_name;
+          newUserSet.email = email;
+          newUserSet.username = req.body.display_name;
+
+          var interests = [];
+          for(var i = 1; i <= 8; i++) {
+            var interest = req.body['interest' + i];
+
+            if (interest === null || interest === undefined || interest === '')
+            {
+              continue;
+            }
+
+            interests.push(interest);
+          }
+          newUserSet.interests = interests;
 
           // set the user's local credentials
           newUser.auth.local.email = email;
@@ -69,16 +82,12 @@ module.exports = function(passport) {
           // save the user local credentials
           newUser.save(function(err) {
             if (err)
-            throw err;
+              throw err;
             return done(null, newUser);
-            });
-
+          });
         }
-
       });
-
     });
-
   }));
 
   passport.use('local-login', new LocalStrategy({
