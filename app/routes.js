@@ -53,7 +53,8 @@ module.exports = function(app, passport) {
 		// Populate the model
 		shinDig.title = req.body.title; 
 		shinDig.date = req.body.date;
-		shinDig.time = req.body.time;
+		shinDig.start_time = req.body.start_time;
+		shinDig.end_time = req.body.end_time;
 		shinDig.location = req.body.location;
 		shinDig.description = req.body.description;
 		shinDig._owner = req.user.email;
