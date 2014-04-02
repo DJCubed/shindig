@@ -1,0 +1,17 @@
+{"first_name": "New",
+  "last_name": "Person",
+  "email": "email1@example.com",
+  "username": "newperson",
+  "auth": {
+    "local" : {"email" : "email1@example.com", "password" : "gobbleygok"}
+  },
+  "interests": ["hiking", "biking"]},
+  {"first_name": "Newer",
+  "last_name": "Personer",
+  "email": "email2@example.com",
+  "username": "newpersoner",
+  "auth": {
+    "local" : {"email" : "email2@example.com", "password" : "gobbleygok3"}
+  },
+  "interests": ["hipster", "biking"]}
+

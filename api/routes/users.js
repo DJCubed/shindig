@@ -9,6 +9,7 @@ exports.collection = function(req, res){
       res.writeHead(500);
       res.send({'error': err});
     } else{
+      //change the password to [FILTERED] for each user
       res.send(users);
     }
   });
@@ -35,6 +36,7 @@ exports.findUserById = function(req, res){
     if(err) {
       res.send({'error': err});
     } else {
+      //change the password to [FILTERED] for this user
       res.send(responseUser);
     }
   });

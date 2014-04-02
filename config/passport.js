@@ -54,11 +54,13 @@ module.exports = function(passport) {
         else {
           // if there is no user with that email
           // create the user
+
           var newUserSet = new User();
           newUserSet.first_name = req.body.first_name;
           newUserSet.last_name = req.body.last_name;
           newUserSet.email = email;
           newUserSet.username = req.body.display_name;
+
 
           var interests = [];
           for(var i = 1; i <= 8; i++) {
