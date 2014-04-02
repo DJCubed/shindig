@@ -55,12 +55,12 @@ module.exports = function(passport) {
         else {
           // if there is no user with that email
           // create the user
-          var newUser = new UserLogin();
-          var newUserSet = new User();
-          newUserSet.first_name = req.body.first_name;
-          newUserSet.last_name = req.body.last_name;
-          newUserSet.email = email;
-          newUserSet.username = req.body.display_name;
+          //var newUser = new UserLogin();
+          var newUser = new User();
+          newUser.first_name = req.body.first_name;
+          newUser.last_name = req.body.last_name;
+          newUser.email = email;
+          newUser.username = req.body.display_name;
 
           var interests = [];
           for(var i = 1; i <= 8; i++) {
@@ -73,7 +73,7 @@ module.exports = function(passport) {
 
             interests.push(interest);
           }
-          newUserSet.interests = interests;
+          newUser.interests = interests;
 
           // set the user's local credentials
           newUser.auth.local.email = email;
