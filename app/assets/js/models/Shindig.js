@@ -6,7 +6,8 @@ module.exports = Backbone.Model.extend({
   urlRoot: 'http://localhost:3000/v1/events',
   defaults: {
     date: '',
-    time: '',
+    start_time: '',
+    end_time: '',
     location: '',
     owner: '',
     title: '',

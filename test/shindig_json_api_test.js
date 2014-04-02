@@ -15,7 +15,8 @@ describe('shindigs JSON api', function(){
       .send({
         title: 'Bowling at Belltown',
         date: 'Sept 65, 1898',
-        time: '2pm',
+        start_time: '2pm',
+        end_time: '3pm',
         location:'Belltown Billiards',
         participants: ['Jonah', 'Dale', 'JD'],
         description: 'Awesome event',

@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 var schema = new mongoose.Schema({
   title: '',
   date: '',
-  time: '',
+  start_time: '',
+  end_time: '',
   location:'',
   participants: [],
   description: '',
