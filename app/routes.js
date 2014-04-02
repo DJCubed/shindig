@@ -5,7 +5,7 @@
 module.exports = function(app, passport) {
 
 
-	// display index page
+	// display landing page
   app.get('/', function(req, res) {
 		// render the page
 		res.render('index', {
@@ -15,23 +15,13 @@ module.exports = function(app, passport) {
 		});
 	});
 
-  // display login form
-  app.get('/login', function(req, res) {
-		// render the page
-		res.render('index', {
-			partials: {'content': 'login',},
-			subTitle: 'Login',
-			message: req.flash('loginMessage')
-		});
-	});
-
 	app.post('/login', passport.authenticate('local-login', {
-    // redirect to the secure profile section
+    // redirect to the shindigList
     successRedirect : '/shindigList',
     // redirect back to the signup page if there is an error
-    failureRedirect : '/login',
+    failureRedirect : '/',
     // allow flash messages
-    failureFlash : true
+    failureFlash : true,
   }));
 
 	// process the registration form
@@ -55,24 +45,41 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	 // display survey form
-  app.get('/survey', function(req, res) {
-		// render the page and pass in any flash data if it exists
+  // save new shindig
+  app.post('/saveshindig', isLoggedIn, function(req, res) {
+  		// load up the shindig model
+		var Shindig = require('../api/models/Shindig');
+		var shinDig = new Shindig();
+		// Populate the model
+		shinDig.title = req.body.title; 
+		shinDig.date = req.body.date;
+		shinDig.time = req.body.time;
+		shinDig.location = req.body.location;
+		shinDig.description = req.body.description;
+		shinDig._owner = req.user.email;
+
+		shinDig.save(function(err) {
+            if (err)
+              throw err;
+          });
+
 		res.render('index', {
-			partials: {'content': 'survey',},
-			subTitle: 'Survey'
+			partials:{'content':'shindigList'},
+			subTitle: 'ShindigList',
+			username : req.user.username // get the user out of session and pass to template
 		});
 	});
 
-  // process the survey form
-  app.post('/survey', passport.authenticate('local-signup', {
-    // redirect to the secure profile section
-    successRedirect : '/shindigList',
-    // redirect back to the signup page if there is an error
-    failureRedirect : '/survey',
-    // allow flash messages
-    failureFlash : true
-  }));
+  //display new shindig form
+  app.get('/newshindig', isLoggedIn, function(req, res) {
+		// render the page and pass in any flash data if it exists
+		res.render('index', {
+			partials: {'content': 'newShindig',},
+			subTitle: 'NewShindig',
+			username: req.user.username //get the userlogin doc from session
+		});
+	});
+
 
   // display shindigList
   app.get('/shindigList', isLoggedIn, function(req, res) {
