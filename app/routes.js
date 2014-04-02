@@ -3,8 +3,8 @@
 'use strict';
 
 module.exports = function(app, passport) {
-  
-	 // display index page
+
+	// display index page
   app.get('/', function(req, res) {
 		// render the page
 		res.render('index', {
@@ -14,8 +14,8 @@ module.exports = function(app, passport) {
 		});
 	});
 
-  	// display login form
-  	app.get('/login', function(req, res) {
+  // display login form
+  app.get('/login', function(req, res) {
 		// render the page
 		res.render('index', {
 			partials: {'content': 'login',},
@@ -25,23 +25,23 @@ module.exports = function(app, passport) {
 	});
 
 	app.post('/login', passport.authenticate('local-login', {
-        // redirect to the secure profile section
-        successRedirect : '/shindigList',
-        // redirect back to the signup page if there is an error
-        failureRedirect : '/login',
-        // allow flash messages
-        failureFlash : true
-        }));
+    // redirect to the secure profile section
+    successRedirect : '/shindigList',
+    // redirect back to the signup page if there is an error
+    failureRedirect : '/login',
+    // allow flash messages
+    failureFlash : true
+  }));
 
 	// process the registration form
-    app.post('/register', passport.authenticate('local-signup', {
-        // redirect to the secure profile section
-        successRedirect : '/shindigList',
-        // redirect back to the signup page if there is an error
-        failureRedirect : '/register',
-        // allow flash messages
-        failureFlash : true
-        }));
+  app.post('/register', passport.authenticate('local-signup', {
+    // redirect to the secure profile section
+    successRedirect : '/shindigList',
+    // redirect back to the signup page if there is an error
+    failureRedirect : '/register',
+    // allow flash messages
+    failureFlash : true
+  }));
 
 
 	 // display registration form
@@ -56,7 +56,6 @@ module.exports = function(app, passport) {
 
 	 // display survey form
   app.get('/survey', function(req, res) {
-
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
 			partials: {'content': 'survey',},
@@ -65,18 +64,17 @@ module.exports = function(app, passport) {
 	});
 
   // process the survey form
-    app.post('/survey', passport.authenticate('local-signup', {
-        // redirect to the secure profile section
-        successRedirect : '/shingList',
-        // redirect back to the signup page if there is an error
-        failureRedirect : '/survey',
-        // allow flash messages
-        failureFlash : true
-        }));
+  app.post('/survey', passport.authenticate('local-signup', {
+    // redirect to the secure profile section
+    successRedirect : '/shindigList',
+    // redirect back to the signup page if there is an error
+    failureRedirect : '/survey',
+    // allow flash messages
+    failureFlash : true
+  }));
 
   // display shindigList
   app.get('/shindigList', isLoggedIn, function(req, res) {
-
 		// render the page and pass in any flash data if it exists
 		res.render('index', {
 			partials: {'content': 'shindigList',},
@@ -85,7 +83,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
-   app.post('/logout', function(req, res) {
+  app.post('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
@@ -95,7 +93,7 @@ module.exports = function(app, passport) {
 // Make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-	// if user is authenticated in the session, carry on 
+	// if user is authenticated in the session, carry on
 	if (req.isAuthenticated())
 		return next();
 

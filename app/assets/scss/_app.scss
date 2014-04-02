@@ -3,6 +3,10 @@ App Specific Elements styles
 --------------------*/
 @import "colors.scss";
 
+
+/*-------------------
+index
+--------------------*/
 #description {
   text-align: center;
   margin-top: 5%;
@@ -27,14 +31,14 @@ App Specific Elements styles
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
-#email {
+#loginEmail {
   width: 150px;
   height: 25px;
   margin-left: 22px;
   margin-right: 22px;
 }
 
-#password {
+#loginPassword {
   width: 150px;
   height: 25px;
   margin-left: 22px;
@@ -72,5 +76,9 @@ App Specific Elements styles
   border-color: $green;
   border: none;
 }
+
+/*-------------------
+register
+--------------------*/
 
 

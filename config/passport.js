@@ -52,7 +52,7 @@ module.exports = function(passport) {
         // check to see if theres already a user with that email
         if (user) {
           return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
-        } 
+        }
         else {
           // if there is no user with that email
           // create the user
@@ -62,7 +62,29 @@ module.exports = function(passport) {
           newUserSet.last_name = req.body.last_name;
           newUserSet.email = email;
           newUserSet.username = req.body.display_name;
-          newUserSet.interests = [req.body.q1, req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6];
+
+          var interests = [];
+
+          for(var i = 1; i <= 8; i++) {
+            var interest = req.body['interest' + i];
+
+            if (interest === null || interest === undefined || interest === '')
+            {
+              continue;
+            }
+
+            interests.push(interest);
+          }
+          /*
+          var intArr = [req.body.q1.value, req.body.q2.value, req.body.q3.value, req.body.q4.value, req.body.q5.value, req.body.q6.value, req.body.q7.value, req.body.q8.value];
+          for(var i = 0; i < 8; i++) {
+            if(intArr[i] !== '') {
+              interests.push(intArr[i]);
+            }
+          }
+          */
+          newUserSet.interests = interests;
+
 
           // set the user's local credentials
           newUser.local.email = email;
@@ -77,16 +99,12 @@ module.exports = function(passport) {
           // save the user local credentials
           newUser.save(function(err) {
             if (err)
-            throw err;
+              throw err;
             return done(null, newUser);
-            });
-          
+          });
         }
-
       });
-
     });
-
   }));
 
   passport.use('local-login', new LocalStrategy({
@@ -115,7 +133,7 @@ module.exports = function(passport) {
       // all is well, return successful user
       return done(null, user);
     });
-      
+
   }));
 
 };

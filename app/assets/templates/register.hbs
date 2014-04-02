@@ -1,65 +1,83 @@
-<div class="grid">
+<p class="centeredDescription col_4">Already registered? You can <a href="/login">log in here.</a></p>
+<p class="flash">{{message}}</p>
 
-	<h1 class="largeHeader">Registration</h1>
-	<p class="centeredDescription col_4">Already registered? You can <a href="/login">log in here.</a></p>
-	<p class="flash">{{message}}</p>
+<div class="small-12 column">
 
-	<div class="col_2">
+	<form id="signupForm" action="/register" method="post">
 
-		<form id="signupForm" action="/register" method="post">
+		<label for="name">First name</label><br>
+		<input class="shortInput" name="first_name" id="first_name" type="text"><br>
 
-			<label for="name">First name</label><br>
-			<input class="shortInput" name="first_name" id="first_name" type="text"><br>
+		<label for="name">Last name</label><br>
+		<input class="shortInput" name="last_name" id="last_name" type="text"><br>
 
-			<label for="name">Last name</label><br>
-			<input class="shortInput" name="last_name" id="last_name" type="text"><br>
+		<label for="name">Display name</label><br>
+		<input class="shortInput" name="display_name" id="displayName" type="text"><br>
 
-			<label for="name">Display name</label><br>
-			<input class="shortInput" name="display_name" id="displayName" type="text"><br>
+		<label for="email">Email</label><br>
+		<input class="shortInput" name="email" id="email" type="text"><br>
 
-			<label for="email">Email</label><br>
-			<input class="shortInput" name="email" id="email" type="text"><br>
+		<label for="password">Pass</label><br>
+		<input type="password" name="password" class="shortInput" id="password" type="text"><br>
 
-			<label for="password">Password</label><br>
-			<input type="password" name="password" class="shortInput" id="password" type="text"><br>
+		<label for="confirmPassword">Confirm password</label><br>
+		<input type="password" name="confirmPassword" class="shortInput" id="confirmPassword" type="text"><br>
 
-			<label for="confirmPassword">Confirm password</label><br>
-			<input type="password" name="confirmPassword" class="shortInput" id="confirmPassword" type="text"><br>
-			<div class = 'survey'>
-				<h1 class="largeHeader">Survey</h1>
-				<div class="small-12 column">
-      			<p>Answer these questions to find local events that fit your interests.</p>
-      			</div>
-				<ol>
-          			<li >I like Coffee<br>
-          				<input id="q1" name="q1" type="radio">True
-          			</li>
-          			<li >I am very active<br>
-          				<input id="q2" name="q2" type="radio">True
-          			</li>
-          			<li >I Hate Smokers<br>
-          				<input id="q3" name="q3" type="radio">True
-          			</li>
-          			<li >I drink a lot of Beer<br>
-          				<input id="q4" name="q4" type="radio">True
-          			</li>
-          			<li >I go out every night<br>
-          				<input id="q5" name="q5" type="radio">True
-          			</li>
-          			<li >I am very single<br>
-          				<input id="q6" name="q6" type="radio">True
-          			</li>
-      			</ol>
-			</div>
-			<button type="submit" class="button_register">Register</button>
-		</form>
-		<p class="flash">{{message}}</p>
-	</div>
-<div class="grid">
+    <p>Answer these questions to find local events that fit your interests.</p>
 
-	
-    
-  </div>
+		<ol>
+			<li id="q1">Do you ride a fixie?<br>
+        <input type="radio" name="interest1" value="hipster">Yes
+        <input type="radio" name="interest1" value="">No
+        <input type="radio" name="interest1" value="">What's a fixie
+      </li>
+
+      <li id="q2">Do you like to hike?<br>
+        <input type="radio" name="interest2" value="outdoors">Yes
+        <input type="radio" name="interest2" value="">No
+        <input type="radio" name="interest2" value="outdoors">I am Bear Gryllls, does that answer the question...
+      </li>
+
+      <li id="q3">Do you know Javascript?<br>
+        <input type="radio" name="interest3" value="geek">Yes
+        <input type="radio" name="interest3" value="">No
+        <input type="radio" name="interest3" value="">I love that drink at Starbucks!
+      </li>
+
+      <li id="q4">Are you a fan of Creed?<br>
+        <input type="radio" name="interest4" value="">Yes
+        <input type="radio" name="interest4" value="music">No
+      </li>
+
+      <li id="q5">Have you beaten FFVII?<br>
+        <input type="radio" name="interest5" value="gaming">Yes
+        <input type="radio" name="interest5" value="">No
+        <input type="radio" name="interest5" value="gaming">5 times
+      </li>
+
+      <li id="q6">Who is the best football team<br>
+        <input type="radio" name="interest6" value="sports" value="sports">Seahawks
+        <input type="radio" name="interest6" value="">What's football?
+      </li>
+
+      <li id="q7">What is your beer of choice?<br>
+        <input type="radio" name="interest7" value="drink">Coffee
+        <input type="radio" name="interest7" value="drink">Beer
+        <input type="radio" name="interest7" value="">Water
+      </li>
+
+      <li id="q8">Do you own a dog?<br>
+        <input type="radio" name="interest8" value="pets">Yes
+        <input type="radio" name="interest8" value="">No
+        <input type="radio" name="interest8" value="pets">All hail the great cat!
+      </li>
+	</ol>
+
+	<button type="submit" class="button_register">Register</button>
+
+	</form>
+
+<p class="flash">{{message}}</p>
 
 </div>
-	<!-- end grid -->
+
