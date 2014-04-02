@@ -1,6 +1,5 @@
 'use strict';
-var mongoose = require('mongoose')
-, Schema = mongoose.Schema;
+var mongoose = require('mongoose'), Schema = mongoose.Schema;
 //var Shindig = require('Shindig');
 var bcrypt = require('bcrypt-nodejs');
 
@@ -23,11 +22,11 @@ var schema = new mongoose.Schema({
 // generating a hash
 schema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
+  };
 
 // checking if password is valid
 schema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.auth.local.password);
-};
+  };
 
 module.exports = mongoose.model('User', schema);

@@ -44,7 +44,7 @@ describe('shindigs JSON api', function(){
   it('can get a single shindig', function(done){
     superagent.get('http://localhost:3000/api/v1/shindigs/' + id).end(function(e, res){
       expect(e).to.eql(null);
-      console.log(res.body + " response");
+      console.log(res.body + ' response');
       expect(res.body._id).to.be.eql(id);
       expect(res.body.title).to.be.eql('Bowling at Belltown');
       expect(res.body.date).to.be.eql('Sept 65, 1898');
