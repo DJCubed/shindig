@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
   idAttribute: '_id',
-  urlRoot: 'http://localhost:3000/v1/events',
+  urlRoot: 'http://localhost:3000/api/v1/shindigs',
   defaults: {
     date: '',
     start_time: '',

@@ -1,5 +1,6 @@
 // app/routes.js
 //jshint unused:false
+
 'use strict';
 
 module.exports = function(app, passport) {
@@ -51,7 +52,7 @@ module.exports = function(app, passport) {
 		var Shindig = require('../api/models/Shindig');
 		var shinDig = new Shindig();
 		// Populate the model
-		shinDig.title = req.body.title; 
+		shinDig.title = req.body.title;
 		shinDig.date = req.body.date;
 		shinDig.start_time = req.body.start_time;
 		shinDig.end_time = req.body.end_time;
@@ -81,7 +82,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
-
+/*
   // display shindigList
   app.get('/shindigList', isLoggedIn, function(req, res) {
 		// render the page and pass in any flash data if it exists
@@ -91,6 +92,7 @@ module.exports = function(app, passport) {
 			username: req.user.username //get the userlogin doc from session
 		});
 	});
+*/
 
   app.post('/logout', function(req, res) {
 		req.logout();
@@ -109,3 +111,4 @@ function isLoggedIn(req, res, next) {
 	// if they aren't redirect them to the home page
 	res.redirect('/');
 }
+
