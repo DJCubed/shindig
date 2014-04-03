@@ -54,14 +54,14 @@ module.exports = function(app, passport) {
 	});
 
   //display new shindig form
-  app.get('/newshindig', isLoggedIn, function(req, res) {
-		// render the page and pass in any flash data if it exists
-		res.render('index', {
-			partials: {'content': 'newShindig',},
-			subTitle: 'NewShindig',
-			username: req.user.username //get the userlogin doc from session
-		});
-	});
+ //  app.get('/newshindig', isLoggedIn, function(req, res) {
+	// 	// render the page and pass in any flash data if it exists
+	// 	res.render('index', {
+	// 		partials: {'content': 'newShindig',},
+	// 		subTitle: 'NewShindig',
+	// 		username: req.user.username //get the userlogin doc from session
+	// 	});
+	// });
 
 /*
   // display shindigList
