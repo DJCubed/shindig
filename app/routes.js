@@ -15,25 +15,6 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	app.post('/login', passport.authenticate('local-login', {
-    // redirect to the shindigList
-    successRedirect : '/shindigList',
-    // redirect back to the signup page if there is an error
-    failureRedirect : '/',
-    // allow flash messages
-    failureFlash : true,
-  }));
-
-	// process the registration form
-  app.post('/register', passport.authenticate('local-signup', {
-    // redirect to the secure profile section
-    successRedirect : '/shindigList',
-    // redirect back to the signup page if there is an error
-    failureRedirect : '/register',
-    // allow flash messages
-    failureFlash : true
-  }));
-
 
 	 // display registration form
   app.get('/register', function(req, res) {
@@ -51,7 +32,7 @@ module.exports = function(app, passport) {
 		var Shindig = require('../api/models/Shindig');
 		var shinDig = new Shindig();
 		// Populate the model
-		shinDig.title = req.body.title; 
+		shinDig.title = req.body.title;
 		shinDig.date = req.body.date;
 		shinDig.start_time = req.body.start_time;
 		shinDig.end_time = req.body.end_time;

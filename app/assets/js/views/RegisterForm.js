@@ -12,16 +12,16 @@ module.exports = Backbone.View.extend({
     this.render();
   },
 
-  events: {
-    submit: 'save'
-  },
+//  events: {
+//    submit: 'save'
+//  },
 
   render: function() {
     var template = require('../../templates/register.hbs');
     this.$el.html(template(this.model.toJSON()));
     return this;
-  },
-
+  }
+/* add comma above
   save: function(e) {
     e.preventDefault();
     var newFirstName = this.$('input[name=firstName]').val();
@@ -51,5 +51,6 @@ module.exports = Backbone.View.extend({
       }
     });
   }
+  */
 });
 
