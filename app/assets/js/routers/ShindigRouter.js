@@ -4,6 +4,7 @@ var Backbone           = require('backbone');
 var $                  = require('jquery');
 //var UserCollection     = require('../models/UserCollection');
 //var UserCollectionView = require('../views/UserCollectionView');
+var Shindig = require('../models/Shindig');
 var CreateShindigView = require('../views/CreateShindigView');
 var ShindigCollection  = require('../models/ShindigCollection');
 var ShindigCollectionView = require('../views/ShindigCollectionView');
@@ -21,8 +22,10 @@ module.exports = Backbone.Router.extend({
 
   create: function() {
     console.log('create me');
-    $('.mainContent').replaceWith(this.createShindigView.el);
+    var shindigForm = new CreateShindigView({model: new Shindig});
+    $('.mainContent').replaceWith(shindigForm.el);
   },
+
 
   start: function() {
     Backbone.history.start({pushState: true});
@@ -38,7 +41,7 @@ module.exports = Backbone.Router.extend({
     console.log("INIT");
     this.shindigList = new ShindigCollection();
     this.shindigListView = new ShindigCollectionView({collection: this.shindigList});
-    this.createShindigView = new CreateShindigView({collection : this.shindigList});
+    //this.createShindigView = new CreateShindigView({collection : this.shindigList});
   }
 
 });

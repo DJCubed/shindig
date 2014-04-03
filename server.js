@@ -88,7 +88,7 @@ app.post('/register', passport.authenticate('local-signup', {
 
 app.post('/login', passport.authenticate('local-login', {
   // redirect to the shindigList
-  successRedirect : '/shindigList',
+  successRedirect : '/#newshindig',
   // redirect back to the signup page if there is an error
   failureRedirect : '/',
   // allow flash messages
