@@ -76,6 +76,25 @@ app.put('/api/v1/shindigs/:id', shindigs.updateShindig);
 app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);
 
 
+// process the registration form
+app.post('/register', passport.authenticate('local-signup', function(req, res) {
+  // redirect to the secure profile section
+  successRedirect : '/shindigs',
+  // redirect back to the signup page if there is an error
+  failureRedirect : '/register',
+  // allow flash messages
+  failureFlash : true
+}));
+
+app.post('/login', passport.authenticate('local-login', {
+  // redirect to the shindigList
+  successRedirect : '/shindigList',
+  // redirect back to the signup page if there is an error
+  failureRedirect : '/',
+  // allow flash messages
+  failureFlash : true,
+}));
+
 
 var server = http.createServer(app);
 server.listen(3000, function(){ //create secure server here (see oaa secureServer.js)

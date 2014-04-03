@@ -4,6 +4,7 @@ var Backbone           = require('backbone');
 var $                  = require('jquery');
 var UserCollection     = require('../models/UserCollection');
 var UserCollectionView = require('../views/UserCollectionView');
+var RegisterForm       = require('../views/RegisterForm');
 
 module.exports = Backbone.Router.extend({
   routes: {'register': 'create',
