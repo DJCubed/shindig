@@ -6,16 +6,20 @@ Backbone.$   = $;
 
 module.exports = Backbone.View.extend({
   tagName: 'div',
-  className: 'event',
+  className: 'register',
 
   initialize: function() {
     this.render();
   },
 
+//  events: {
+//    submit: 'save'
+//  },
+
   render: function() {
-    var shindigAttributes = this.model.toJSON();
-    var template = require('../../templates/shindig.hbs');
-    this.$el.html(template(shindigAttributes));
+    var template = require('../../templates/register.hbs');
+    this.$el.html(template(this.model.toJSON()));
     return this;
   }
 });
+

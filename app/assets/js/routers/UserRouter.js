@@ -2,8 +2,10 @@
 
 var Backbone           = require('backbone');
 var $                  = require('jquery');
-var UserCollection     = require('../models/UserCollection');
-var UserCollectionView = require('../views/UserCollectionView');
+//var UserCollection     = require('../models/UserCollection');
+//var UserCollectionView = require('../views/UserCollectionView');
+var RegisterForm       = require('../views/RegisterForm');
+var User               = require('../models/User');
 
 module.exports = Backbone.Router.extend({
   routes: {'register': 'create',
@@ -11,8 +13,9 @@ module.exports = Backbone.Router.extend({
            'users': 'index'},
 
   create: function() {
+    console.log('hello');
     var registerForm = new RegisterForm({model: new User});
-    $('.mainContent').replaceWith(registerForm.el);
+    $('.innerContainer').replaceWith(registerForm.el);
   },
 
   show: function(id) {
@@ -20,17 +23,17 @@ module.exports = Backbone.Router.extend({
   },
 
   start: function() {
-    Backbone.history.start({pushState: false});
+    Backbone.history.start({pushState: true});
   },
 
   index: function() {
     this.userList.fetch();
-    $('.mainContent').replaceWith(this.userListView.el);
+    $('.innerContainer').replaceWith(this.userListView.el);
   },
 
   initialize: function() {
-    this.userList = new UserCollection();
-    this.userListView = new UserCollectionView({collection: this.userList});
+    //this.userList = new UserCollection();
+    //this.userListView = new UserCollectionView({collection: this.userList});
   }
 
 });

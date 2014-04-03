@@ -56,10 +56,10 @@ module.exports = function(passport) {
           // create the user
 
           var newUserSet = new User();
-          newUserSet.first_name = req.body.first_name;
-          newUserSet.last_name = req.body.last_name;
+          newUserSet.first_name = req.body.firstName;
+          newUserSet.last_name = req.body.lastName;
           newUserSet.email = email;
-          newUserSet.username = req.body.display_name;
+          newUserSet.username = req.body.displayName;
 
 
           var interests = [];
