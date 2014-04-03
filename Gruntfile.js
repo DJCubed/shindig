@@ -190,7 +190,7 @@ module.exports = function(grunt) {
 
   //grunt mocha cov
   grunt.registerTask('server', ['build:dev','express:dev','watch:express','notify']);
-  //grunt.registerTask('test:acceptance',['express:dev','casper']);
+  grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
   grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
   //grunt.registerTask('build:prod', ['clean:prod', 'browserify:prod', 'copy:prod']);
