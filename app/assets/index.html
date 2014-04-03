@@ -5,6 +5,8 @@
 
   <!-- stylesheets -->
   <link rel="stylesheet" href="css/styles.css" type="css/text" />
+
+  <!-- scripts -->
   <script src="browser.js"></script>
 
 </head>
@@ -21,38 +23,42 @@
 
   <div class="mainContent">
 
-    <div class="row"><!-- 1st row -->
-      <div class="small-12 large-12 column">
-        <p id="description">Meet people like you, <br> doing the stuff you do.</p>
-      </div>
-    </div><!-- end of 1st row -->
+    <div class="innerContainer">
 
-    <div class"row"><!-- 2nd row -->
-      <div class="small-12 large-12 column">
+      <div class="row"><!-- 1st row -->
+        <div class="small-12 large-12 column">
+          <p id="description">Meet people like you, <br> doing the stuff you do.</p>
+        </div>
+      </div><!-- end 1st row -->
 
-        <div id="loginBox">
-          <h4 id="signIn">Sign In</h4>
+      <div class"row"><!-- 2nd row -->
+        <div class="small-12 large-12 column">
 
-          <form action = "/login" method = "post">
-            <input type="text" id="loginEmail" name="email" placeholder="Email or Username">
-            <br>
-            <input type="text" id="loginPassword" name="password" placeholder="Password">
-            <br>
-            <button type="submit" class="login_button"><span class="white">Go!</span></button>
-          </form>
+          <div id="loginBox">
+            <h4 id="signIn">Sign In</h4>
+
+            <form action = "/login" method = "post">
+              <input type="text" id="loginEmail" name="email" placeholder="Email or Username">
+              <br>
+              <input type="text" id="loginPassword" name="password" placeholder="Password">
+              <br>
+              <button type="submit" class="login_button"><span class="white">Go!</span></button>
+            </form>
+
+          </div>
 
         </div>
+      </div><!-- end 2nd row -->
 
-      </div>
-    </div><!-- end of 2nd row -->
+      <div class="row"><!-- 3rd row -->
+        <div class="small-12">
 
-    <div class="row"><!-- 3rd row -->
-      <div class="small-12">
+          <a href="/#register" id="createAccount"><button id="createAccountButton"><span class="white">Create an account</span></a></button>
 
-        <a href="/register" id="createAccount"><button id="createAccountButton"><span class="white">Create an account</span></a></button>
+        </div>
+      </div><!-- end 3rd row -->
 
-      </div>
-    </div><!-- end of 3rd row -->
+    </div><!-- end innerContainer -->
 
   </div><!-- end mainContent -->
 

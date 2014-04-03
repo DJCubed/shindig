@@ -20,13 +20,11 @@ module.exports = Backbone.Router.extend({
   },
 
   index: function() {
-    console.log("WINNING");
     this.shindigList.fetch();
-    $('.mainContent').replaceWith(this.shindigListView.el);
+    $('.innerContainer').replaceWith(this.shindigListView.el);
   },
 
   initialize: function() {
-    console.log("INIT");
     this.shindigList = new ShindigCollection();
     this.shindigListView = new ShindigCollectionView({collection: this.shindigList});
   }

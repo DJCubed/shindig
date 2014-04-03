@@ -77,7 +77,7 @@ app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);
 
 
 // process the registration form
-app.post('/register', passport.authenticate('local-signup', function(req, res) {
+app.post('/register', passport.authenticate('local-signup', {
   // redirect to the secure profile section
   successRedirect : '/shindigs',
   // redirect back to the signup page if there is an error
@@ -88,7 +88,7 @@ app.post('/register', passport.authenticate('local-signup', function(req, res) {
 
 app.post('/login', passport.authenticate('local-login', {
   // redirect to the shindigList
-  successRedirect : '/shindigList',
+  successRedirect : '/shindigs',
   // redirect back to the signup page if there is an error
   failureRedirect : '/',
   // allow flash messages
