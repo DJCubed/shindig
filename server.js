@@ -49,7 +49,7 @@ function isLoggedIn(req, res, next) {
 
 require('./app/routes')(app, passport);//pass passport to routes.js
 
-//app.get('/api/*', isLoggedIn);
+app.get('/api/*', isLoggedIn);
 
 app.get('/api/v1/users', users.collection);
 
@@ -79,16 +79,16 @@ app.delete('/api/v1/shindigs/:id', shindigs.deleteShindig);
 // process the registration form
 app.post('/register', passport.authenticate('local-signup', {
   // redirect to the secure profile section
-  successRedirect : '/shindigs',
+  successRedirect : '/#shindigs',
   // redirect back to the signup page if there is an error
-  failureRedirect : '/register',
+  failureRedirect : '/#register',
   // allow flash messages
   failureFlash : true
 }));
 
 app.post('/login', passport.authenticate('local-login', {
   // redirect to the shindigList
-  successRedirect : '/shindigs',
+  successRedirect : '/#newshindig',
   // redirect back to the signup page if there is an error
   failureRedirect : '/',
   // allow flash messages
