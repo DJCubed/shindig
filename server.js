@@ -49,7 +49,7 @@ function isLoggedIn(req, res, next) {
 
 require('./app/routes')(app, passport);//pass passport to routes.js
 
-//app.get('/api/*', isLoggedIn);
+app.get('/api/*', isLoggedIn);
 
 app.get('/api/v1/users', users.collection);
 

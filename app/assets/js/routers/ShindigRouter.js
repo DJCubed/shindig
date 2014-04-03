@@ -9,12 +9,15 @@ module.exports = Backbone.Router.extend({
   routes: {'shindigs/:id': 'show',
            'shindigs': 'index'},
 
+
+
   show: function(id) {
     console.log(id);
   },
 
   start: function() {
-    Backbone.history.start({pushState: false});
+    //router.navigate('shindigs', {trigger: true});
+    Backbone.history.start({pushState: true});
   },
 
   index: function() {
