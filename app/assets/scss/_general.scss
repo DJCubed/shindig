@@ -4,14 +4,16 @@ General styles
 @import "colors.scss";
 
 #banner {
-  background-color: $green;
+  //background-color: $green;
 }
 
 #shindig {
   text-align: center;
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em;
-  margin-top: 5px;
+  top: -65px;
+  position: relative;
+  font-weight: bold;
 }
 
 .mainContent {
@@ -19,9 +21,33 @@ General styles
   border-left: none;
   border-right: none;
   overflow: scroll;
+  background-color: $pastelGreen;
 }
 
 .white {
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.colBox {
+  width: (100% / 12);
+  height: 65px;
+  display: inline;
+  float: left;
+}
+
+#one {
+  background-color: $green;
+}
+
+#two {
+  background-color: $blue;
+}
+
+#three {
+  background-color: $brown;
+}
+
+#four {
+  background-color: $orange;
 }
