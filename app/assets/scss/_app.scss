@@ -10,6 +10,12 @@ body{
   font-family: 'Shadows Into Light', cursive;
 }
 
+.container {
+  background-image: url('../summer-tree.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
 #description {
   text-align: center;
   margin-top: 5%;
@@ -20,7 +26,6 @@ body{
 #loginBox {
   margin-left: auto;
   margin-right: auto;
-
   border: 3px solid $brown;
   border-radius: 10px;
   background-color: $brown;
