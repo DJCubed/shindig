@@ -10,6 +10,14 @@ Backbone.$   = $;
 var ApplicationRouter = require('./routers/ApplicationRouter');
 
 $(function() {
-  var appRouter = new ApplicationRouter;
+  var appRouter = new ApplicationRouter();
   appRouter.start();
+
+  $('.backbone').click(function(e) {
+    e.preventDefault();
+    appRouter.navigate('register', {trigger: true});
+  });
+
 });
+
+

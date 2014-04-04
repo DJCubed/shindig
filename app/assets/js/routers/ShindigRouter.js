@@ -23,7 +23,7 @@ module.exports = Backbone.Router.extend({
   create: function() {
     console.log('create me');
     var shindigForm = new CreateShindigView({model: new Shindig});
-    $('.mainContent').replaceWith(shindigForm.el);
+    $('.innerContainer').replaceWith(shindigForm.el);
   },
 
 
@@ -32,16 +32,13 @@ module.exports = Backbone.Router.extend({
   },
 
   index: function() {
-    console.log("WINNING");
     this.shindigList.fetch();
-    $('.mainContent').replaceWith(this.shindigListView.el);
+    $('.innerContainer').replaceWith(this.shindigListView.el);
   },
 
   initialize: function() {
-    console.log("INIT");
     this.shindigList = new ShindigCollection();
     this.shindigListView = new ShindigCollectionView({collection: this.shindigList});
-    //this.createShindigView = new CreateShindigView({collection : this.shindigList});
   }
 
 });

@@ -66,6 +66,7 @@ $BH240: "min-height: 240px";
 
 }
 
+
 	#aboutshindig{
 		font-size: 3em;
 		text-align: center;
@@ -75,6 +76,15 @@ $BH240: "min-height: 240px";
 	@media screen and (min-width: 321px) and (max-width: 1000px){
 		font-size: 2em;
 	}
+
+.mainContent {
+  width: 100%;
+  height: 80%;
+}
+
+.innerContainer {
+  width: 100%;
+  height: 80%;
 
 }
 
