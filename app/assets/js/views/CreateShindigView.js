@@ -14,7 +14,6 @@ module.exports = Backbone.View.extend({
 
   render: function() {
     var template = require('../../templates/createShindig.hbs');
-    //this.$el.html(template);
     this.$el.html(template(this.model.toJSON()));
     return this;
   },
@@ -32,6 +31,10 @@ module.exports = Backbone.View.extend({
     var newEndsTime = this.$('input[name=end_time]').val();
     var newLocation = this.$('input[name=location]').val();
     var newOwner = "tester person";
+    var newInterests = this.$('input:checkbox:checked').map(function () {
+      return $(this).val();
+      }).get();
+    console.log(newInterests);
     this.model.save({
       date: newDate,
       start_time: newStartsTime,
@@ -41,7 +44,7 @@ module.exports = Backbone.View.extend({
       title: newTitle,
       description: newDescription,
       participants: [],
-      interests: ['hiking', 'skiing', 'dogs', 'drink']
+      interests: newInterests
       }, {
       success: function() {
         Backbone.history.navigate('shindigs', {trigger: true});

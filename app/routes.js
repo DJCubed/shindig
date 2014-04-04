@@ -17,38 +17,28 @@ module.exports = function(app, passport) {
 	});
 
   // save new shindig
-  app.post('/saveshindig', isLoggedIn, function(req, res) {
-  		// load up the shindig model
-		var Shindig = require('../api/models/Shindig');
-		var shinDig = new Shindig();
-		// Populate the model
-		shinDig.title = req.body.title;
-		shinDig.date = req.body.date;
-		shinDig.start_time = req.body.start_time;
-		shinDig.end_time = req.body.end_time;
-		shinDig.location = req.body.location;
-		shinDig.description = req.body.description;
-		shinDig._owner = req.user.email;
+ //  app.post('/saveshindig', isLoggedIn, function(req, res) {
+ //  		// load up the shindig model
+	// 	var Shindig = require('../api/models/Shindig');
+	// 	var shinDig = new Shindig();
+	// 	// Populate the model
+	// 	shinDig.title = req.body.title;
+	// 	shinDig.date = req.body.date;
+	// 	shinDig.start_time = req.body.start_time;
+	// 	shinDig.end_time = req.body.end_time;
+	// 	shinDig.location = req.body.location;
+	// 	shinDig.description = req.body.description;
+	// 	shinDig._owner = req.user.email;
 
-		shinDig.save(function(err) {
-            if (err)
-              throw err;
-          });
+	// 	shinDig.save(function(err) {
+ //            if (err)
+ //              throw err;
+ //          });
 
-		res.render('index', {
-			partials:{'content':'shindigList'},
-			subTitle: 'ShindigList',
-			username : req.user.username // get the user out of session and pass to template
-		});
-	});
-
-  //display new shindig form
- //  app.get('/newshindig', isLoggedIn, function(req, res) {
-	// 	// render the page and pass in any flash data if it exists
 	// 	res.render('index', {
-	// 		partials: {'content': 'newShindig',},
-	// 		subTitle: 'NewShindig',
-	// 		username: req.user.username //get the userlogin doc from session
+	// 		partials:{'content':'shindigList'},
+	// 		subTitle: 'ShindigList',
+	// 		username : req.user.username // get the user out of session and pass to template
 	// 	});
 	// });
 
