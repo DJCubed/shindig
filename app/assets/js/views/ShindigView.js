@@ -6,7 +6,7 @@ Backbone.$   = $;
 
 module.exports = Backbone.View.extend({
   tagName: 'div',
-  className: 'event',
+  className: 'shindigContainer',
 
   initialize: function() {
     this.render();

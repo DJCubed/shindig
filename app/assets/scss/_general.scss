@@ -18,10 +18,15 @@ General styles
   border: 2px solid $brown;
   border-left: none;
   border-right: none;
-  overflow: scroll;
 }
 
 .white {
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.shindigContainer {
+  margin: 15px;
+  border: 1.5px solid black;
+  border-radius: 5px;
 }
