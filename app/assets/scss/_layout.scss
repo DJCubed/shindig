@@ -50,8 +50,11 @@ $BH240: "min-height: 240px";
 	@media screen and (max-width: 320px) {
 		height: 40px;
 	}
-	@media screen and (min-width: 321px) and (max-width: 1000px){
+	@media screen and (min-width: 321px) and (max-width: 800px){
 		height: 100px;
+	}
+	@media screen and (min-width: 801px) and (max-width: 1000px){
+		height: 150px;
 	}
 }
 
@@ -60,21 +63,27 @@ $BH240: "min-height: 240px";
 	@media screen and (max-width: 320px) {
 		font-size: 2em;
 	}
-	@media screen and (min-width: 321px) and (max-width: 1000px){
+	@media screen and (min-width: 321px) and (max-width: 800px){
 		font-size: 5em;
+	}
+	@media screen and (min-width: 801px) and (max-width: 1000px){
+		font-size: 7em;
 	}
 
 }
 
 
 	#aboutshindig{
-		font-size: 3em;
+		font-size: 25px;
 		text-align: center;
 	@media screen and (max-width: 320px) {
 		font-size: 1em;
 	}
-	@media screen and (min-width: 321px) and (max-width: 1000px){
+	@media screen and (min-width: 321px) and (max-width: 800px){
 		font-size: 2em;
+	}
+	@media screen and (min-width: 801px) and (max-width: 1000px){
+		font-size: 20px;
 	}
 
 }
@@ -92,14 +101,18 @@ $BH240: "min-height: 240px";
 
 
 	#loginBox{
-		height: 200px;
+		height: 150px;
   		width: 600px;
 	@media screen and (max-width: 320px) {
 		width: 200px;
-		height: 140px
+		height: 130px
 	}
-	@media screen and (min-width: 321px) and (max-width: 1000px){
-		width: 400px;
+	@media screen and (min-width: 321px) and (max-width: 800px){
+		width: 300px;
+		height: 150px;
+	}
+	@media screen and (min-width: 801px) and (max-width: 1000px){
+		width: 500px;
 		height: 180px;
 	}
 
