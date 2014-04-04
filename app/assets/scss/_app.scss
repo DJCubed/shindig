@@ -1,7 +1,7 @@
 /*-------------------
 App Specific Elements styles
 --------------------*/
-@import "colors.scss";
+@import "colors";
 
 
 /*-------------------
@@ -17,8 +17,7 @@ index
 #loginBox {
   margin-left: auto;
   margin-right: auto;
-  height: 140px;
-  width: 200px;
+  
   border: 3px solid $brown;
   border-radius: 10px;
   background-color: $brown;
@@ -63,7 +62,7 @@ index
   text-decoration: none;
 }
 
-#createAccountButton {
+/*#createAccountButton {
   margin-top: 10%;
   margin-right: auto;
   margin-left: 27%;
@@ -76,7 +75,7 @@ index
   border-color: $green;
   border: none;
 }
-
+*/
 /*-------------------
 register
 --------------------*/
