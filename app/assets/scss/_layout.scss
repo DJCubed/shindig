@@ -45,8 +45,8 @@ $BH360: "min-height: 360px";
 $BH320: "min-height: 320px";
 $BH240: "min-height: 240px";
 
-#banner{
-		height: 200px;
+.container{
+		background-image: url('../summer-tree.png');
 	@media screen and (max-width: 320px) {
 		height: 40px;
 	}
