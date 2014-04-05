@@ -118,5 +118,12 @@ $BH240: "min-height: 240px";
 .shindigContainer {
 	width: 60%;
 	height: 125px;
-	@media screen and
+	margin-left: 15%;
+	margin-bottom: 10px;
+	@media screen and (max-width: 400px) {
+		width: 95%;
+		height: 100px;
+		margin: 2.5%;
+		margin-bottom: 5px;
+	}
 }
