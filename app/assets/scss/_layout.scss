@@ -106,9 +106,10 @@ body{
 }
 */
 
+
 	#loginBox{
+		width: 600px;
 		height: 150px;
-  		width: 600px;
 	@media screen and (max-width: 320px) {
 		width: 200px;
 		height: 130px
@@ -124,33 +125,40 @@ body{
 }
 
 	#loginEmail {
-  width: 250px;
-  height: 30px;
+ 
   float: left;
-  margin-left: 20px;
+  margin-top: 30px;
   font-size: 28px;
 }
+	#loginBox:input{
+		width: 250px;
+ 		height: 30px;
+	}
 
 	#loginPassword {
-  width: 250px;
-  height: 30px;
+  //width: 250px;
+ // height: 30px;
   float: right;
-  margin-right: 20px;
+  margin-top: 30px;
   font-size: 28px;
 }
 	
 	#joinImg{
 	float: left;
-	margin-left: 200px;
+	margin-left: 20px;
 }
 
 	#loginImg{
-	float: right;
-	margin-right: 200px;
+	float:right;
+	margin-right: 20px;
 }
 
 	#signIn{
 		font-size: 35px;
+		width:100px;
+		height:40px;
+		float:left;
+		margin-left: 125px;
 	}
 
 
