@@ -3,11 +3,8 @@ General styles
 --------------------*/
 @import "colors.scss";
 
-#banner {
-  background-color: $green;
-}
 
-#shindig {
+#shindigLogo {
   text-align: center;
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em;
@@ -28,8 +25,11 @@ General styles
 .shindigContainer {
   border: 2px solid black;
   border-radius: 5px;
+  background-color: white;
 }
 
 .shindigDetail {
-
+  font-size: 1.1em;
+  margin-left: 35px;
+  margin-bottom: 2px;
 }

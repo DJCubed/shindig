@@ -45,8 +45,13 @@ $BH360: "min-height: 360px";
 $BH320: "min-height: 320px";
 $BH240: "min-height: 240px";
 
+body {
+	height: 100%;
+	width: 100%;
+}
+
 #banner{
-	height: 200px;
+	height: 150px;
 	@media screen and (max-width: 320px) {
 		height: 40px;
 	}
@@ -58,12 +63,12 @@ $BH240: "min-height: 240px";
 	}
 }
 
-#shindig{
-	font-size: 10em;
-	@media screen and (max-width: 320px) {
-		font-size: 2em;
+#shindigLogo{
+	font-size: 7em;
+	@media screen and (max-width: 400px) {
+		font-size: 4em;
 	}
-	@media screen and (min-width: 321px) and (max-width: 800px){
+	@media screen and (min-width: 401px) and (max-width: 800px){
 		font-size: 5em;
 	}
 	@media screen and (min-width: 801px) and (max-width: 1000px){
@@ -116,14 +121,15 @@ $BH240: "min-height: 240px";
 }
 
 .shindigContainer {
-	width: 60%;
+	width: 50%;
 	height: 125px;
-	margin-left: 15%;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 10px;
 	@media screen and (max-width: 400px) {
-		width: 95%;
+		width: 97%;
 		height: 100px;
-		margin: 2.5%;
+		margin: 1.5%;
 		margin-bottom: 5px;
 	}
 }

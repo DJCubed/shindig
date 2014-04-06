@@ -24,12 +24,12 @@ module.exports = Backbone.View.extend({
 
   save: function(e) {
     e.preventDefault();
-    var newTitle = this.$('input[name=title]').val();
-    var newDate = this.$('input[name=date]').val();
-    var newDescription = this.$('input[name=description]').val();
-    var newStartsTime = this.$('input[name=start_time]').val();
-    var newEndsTime = this.$('input[name=end_time]').val();
-    var newLocation = this.$('input[name=location]').val();
+    var newTitle = this.$('input[name=titleCreate]').val();
+    var newDate = this.$('input[name=dateCreate]').val();
+    var newDescription = this.$('input[name=descriptionCreate]').val();
+    var newStartsTime = this.$('input[name=startTimeCreate]').val();
+    var newEndsTime = this.$('input[name=endTimeCreate]').val();
+    var newLocation = this.$('input[name=locationCreate]').val();
     var newOwner = "tester person";
     var newInterests = this.$('input:checkbox:checked').map(function () {
       return $(this).val();
