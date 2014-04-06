@@ -27,7 +27,4 @@ $(function(){
 	loginform.submit();
   });
 
-	$('#joinImg').click(function(){
-
-	});
 });

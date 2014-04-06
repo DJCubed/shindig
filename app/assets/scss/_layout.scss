@@ -45,37 +45,43 @@ $BH360: "min-height: 360px";
 $BH320: "min-height: 320px";
 $BH240: "min-height: 240px";
 
-.container{
-		background-image: url('../summer-tree.png');
-	@media screen and (max-width: 320px) {
-		background-image: url('../summer-tree300.png');
+body{
+		background-image: url('../summer-tree2.png');
+		background-repeat: no-repeat;
+		background-position-x: center;
+	@media screen and (max-width: 425px) {
+		background-image: url('../summer-tree2-280.png');
 	}
-	@media screen and (min-width: 321px) and (max-width: 800px){
-		background-image: url('../summer-tree800.png');
+	@media screen and (min-width: 426px) and (max-width: 575px){
+		background-image: url('../summer-tree2-400.png');
 	}
-	@media screen and (min-width: 801px) and (max-width: 1000px){
-		background-image: url('../summer-tree.png');
+	@media screen and (min-width: 576px) and (max-width: 650px){
+		background-image: url('../summer-tree2-600.png');
+	}
+	@media screen and (min-width: 651px) and (max-width: 800px){
+		background-image: url('../summer-tree2-800.png');
 	}
 }
 
-#shindig{
-		font-size: 10em;
-	@media screen and (max-width: 320px) {
-		font-size: 2em;
+.mainContent {
+  		border: none;
+  		border-left: none;
+  		border-right: none;
+  	@media screen and (max-width: 320px) {
+		
 	}
 	@media screen and (min-width: 321px) and (max-width: 800px){
-		font-size: 5em;
+		
 	}
 	@media screen and (min-width: 801px) and (max-width: 1000px){
-		font-size: 7em;
+		
 	}
-
 }
-
 
 	#aboutshindig{
-		font-size: 25px;
+		font-size: 35px;
 		text-align: center;
+		margin-top: 180px;
 	@media screen and (max-width: 320px) {
 		font-size: 1em;
 	}
@@ -88,7 +94,7 @@ $BH240: "min-height: 240px";
 
 }
 
-.mainContent {
+/*.mainContent {
   width: 100%;
   height: 80%;
 }
@@ -98,7 +104,7 @@ $BH240: "min-height: 240px";
   height: 80%;
 
 }
-
+*/
 
 	#loginBox{
 		height: 150px;
@@ -115,9 +121,37 @@ $BH240: "min-height: 240px";
 		width: 500px;
 		height: 180px;
 	}
-	#cbHipster{
-		display: none;
-	}
-	
-
 }
+
+	#loginEmail {
+  width: 250px;
+  height: 30px;
+  float: left;
+  margin-left: 20px;
+  font-size: 28px;
+}
+
+	#loginPassword {
+  width: 250px;
+  height: 30px;
+  float: right;
+  margin-right: 20px;
+  font-size: 28px;
+}
+	
+	#joinImg{
+	float: left;
+	margin-left: 200px;
+}
+
+	#loginImg{
+	float: right;
+	margin-right: 200px;
+}
+
+	#signIn{
+		font-size: 35px;
+	}
+
+
+

@@ -8,9 +8,9 @@ html {
   font-weight: 300; // use 300 - book or 400 - normal (for bold)
   //color: $black;
   line-height: 1.4;
-  @media screen and (max-width: 450px) {
-    font-size: 95%;
-  }
+//  @media screen and (max-width: 450px) {
+//    font-size: 95%;
+ // }
 }
 
 /*-----------------------------
@@ -37,14 +37,14 @@ h1, h2, h3, h4 {
   margin: 0 0 0.25em;
   line-height: 1;
 }
-
+/*
 h1 {
   font-size: 3.375em;
   @media screen and (min-width: 800em) {
     font-size: 5.063em;
   }
 }
-
+*/
 h2 {
   font-size: 3.375em;
 }

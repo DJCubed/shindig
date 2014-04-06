@@ -37,19 +37,22 @@ body{
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+#joinImg:hover{
+  background-image: url('../JoinHoverClick.png');
+}
+
+#loginImg:hover{
+  background-image: url('../GoHoverClick.png');
+}
+
 #loginEmail {
-  width: 150px;
-  height: 25px;
-  margin-left: 22px;
-  margin-right: 22px;
+  
 }
 
 #loginPassword {
-  width: 150px;
-  height: 25px;
-  margin-left: 22px;
-  margin-right: 22px;
+  
 }
+
 
 .login_button {
  

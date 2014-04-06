@@ -13,43 +13,32 @@
 </head>
 
 <body>
-
 <div class="container">
 
-  <div id="banner" class="banner_class">
     <!-- want to use Coquette Regular here -->
-    <h2 id="shindig">Shindig</h2>
-  </div>
+    <h2 id="shindig"></h2>
 
   <div class="mainContent">
 
     <div class="innerContainer">
-      <div class="row"><!-- 1st row -->
-        <div id="aboutshindig">
-          <p>Meet people like you, <br> doing the stuff you do.</p>
-        </div>
-      </div><!-- end 1st row -->
+      <div id="aboutshindig">
+        <p>Meet people like you, doing the stuff you do.</p>
+      </div>
       <div class"row"><!-- 2nd row -->
         <div class="small-12 large-12 column">
-
-          <div id="loginBox">
-            <h4 id="signIn">Sign In</h4>
-
-            <form id="loginform" action = "/login" method = "post">
+          <form id="loginform" action = "/login" method = "post">
+            <img id="joinImg" class="backbone" src="../Join.png"/>
+            <img id="loginImg" src="../Go.png"/>
+            <div id="loginBox">
+              <h4 id="signIn">Sign In</h4>
               <input type="text" id="loginEmail" name="email" placeholder="Email or Username">
-              <br>
               <input type="text" id="loginPassword" name="password" placeholder="Password">
-              <br>
-              <img id="loginImg" src="../Go.png"/><img id="joinImg" class="backbone" src="../Join.png"/>
-            </form>
-
-          </div>
-
+            </div>
+          </form>
         </div>
       </div><!-- end 2nd row -->
 
       <div class="row"><!-- 3rd row -->
-        
       </div><!-- end 3rd row -->
 
     </div><!-- end innerContainer -->
@@ -57,10 +46,6 @@
   </div><!-- end mainContent -->
 
 </div><!-- end container -->
-
-<div class="footer">
-
-</div><!-- end footer -->
 
 
 </body>
