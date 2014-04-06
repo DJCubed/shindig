@@ -23,9 +23,19 @@
 }
 
 .buttonRegister {
+  box-shadow: 5px 5px 10px gray;
   background-color: #C4D46A;
-  border-radius: 3em;
+  border-radius: .3em;
   border: none;
   font-family: 'Shadows Into Light', cursive;
   font-size: 2em;
+  margin-bottom: .5em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.buttonRegister:hover {
+    cursor: pointer;
+    cursor: hand;
 }
