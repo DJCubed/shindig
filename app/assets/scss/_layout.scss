@@ -45,16 +45,16 @@ $BH360: "min-height: 360px";
 $BH320: "min-height: 320px";
 $BH240: "min-height: 240px";
 
-#banner{
-		height: 200px;
+.container{
+		background-image: url('../summer-tree.png');
 	@media screen and (max-width: 320px) {
-		height: 40px;
+		background-image: url('../summer-tree300.png');
 	}
 	@media screen and (min-width: 321px) and (max-width: 800px){
-		height: 100px;
+		background-image: url('../summer-tree800.png');
 	}
 	@media screen and (min-width: 801px) and (max-width: 1000px){
-		height: 150px;
+		background-image: url('../summer-tree.png');
 	}
 }
 

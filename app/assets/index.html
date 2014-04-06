@@ -35,12 +35,12 @@
           <div id="loginBox">
             <h4 id="signIn">Sign In</h4>
 
-            <form action = "/login" method = "post">
+            <form id="loginform" action = "/login" method = "post">
               <input type="text" id="loginEmail" name="email" placeholder="Email or Username">
               <br>
               <input type="text" id="loginPassword" name="password" placeholder="Password">
               <br>
-              <button type="submit" class="login_button"><span class="white">Go!</span></button>
+              <img id="loginImg" src="../Go.png"/><img id="joinImg" class="backbone" src="../Join.png"/>
             </form>
 
           </div>
@@ -49,11 +49,7 @@
       </div><!-- end 2nd row -->
 
       <div class="row"><!-- 3rd row -->
-        <div class="small-12">
-
-          <a href="/#register" id="createAccount"><button id="createAccountButton" class="backbone"><span class="white">Register</span></a></button>
-
-        </div>
+        
       </div><!-- end 3rd row -->
 
     </div><!-- end innerContainer -->
