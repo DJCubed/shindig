@@ -17,7 +17,17 @@ $(function() {
     e.preventDefault();
     appRouter.navigate('register', {trigger: true});
   });
-
+  
 });
 
+//Click functions
+$(function(){
 
+	$('#loginImg').click(function(){
+	loginform.submit();
+  });
+
+	$('#joinImg').click(function(){
+
+	});
+});
