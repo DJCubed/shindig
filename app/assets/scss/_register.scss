@@ -7,4 +7,25 @@
   border: 2px solid black;
   border-left: none;
   border-right: none;
+  font-size: 1.2em;
+}
+
+.formTexts {
+  text-align: center;
+}
+
+.formBox li {
+  margin-bottom: 1em;
+}
+
+.formBox p {
+  text-align: center;
+}
+
+.buttonRegister {
+  background-color: #C4D46A;
+  border-radius: 3em;
+  border: none;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2em;
 }

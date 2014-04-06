@@ -2,7 +2,8 @@
 <p class="flash">{{message}}</p>
 
 <div class="formBox medium-12 column">
-<div class="medium-4 column">
+<p>Answer these questions to find local events that fit your interests.</p>
+<div class="formTexts medium-4 column">
 	<form id="signupForm" action="/register" method="post">
 
 		<label for="name">First name</label><br>
@@ -24,7 +25,7 @@
 		<input name="confirmPassword" class="shortInput" id="confirmPassword" type="text"><br>
 </div>
 
-    <p>Answer these questions to find local events that fit your interests.</p>
+    {{!-- <p>Answer these questions to find local events that fit your interests.</p> --}}
 <div class="medium-4 column">
 		<ul>
 			<li id="q1">Do you ride a fixie?<br>
@@ -36,7 +37,7 @@
       <li id="q2">Do you like to hike?<br>
         <input type="radio" name="interest2" value="outdoors">Yes
         <input type="radio" name="interest2" value="">No
-        <input type="radio" name="interest2" value="outdoors">I am Bear Gryllls, does that answer the question...
+        <input type="radio" name="interest2" value="outdoors">I am Bear Gryllls
       </li>
 
       <li id="q3">Do you know Javascript?<br>
@@ -50,6 +51,7 @@
         <input type="radio" name="interest4" value="music">No
       </li>
       </ul>
+      <button type="submit" class="button_register buttonRegister">Register</button>
 </div>
 <div class="medium-4 column">
   <ul>
@@ -76,8 +78,9 @@
         <input type="radio" name="interest8" value="pets">All hail the great cat!
       </li>
 	</ul>
+
 </div>
-	<button type="submit" class="button_register">Register</button>
+
 
 	</form>
 
