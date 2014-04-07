@@ -20,11 +20,8 @@ $(function() {
   
 });
 
-//Click functions
 $(function(){
-
-	$('#loginImg').click(function(){
-	loginform.submit();
-  });
-
+	$('#joinBtn').mousedown(function(){
+		$('#joinImg').css("background-image", '../JoinHoverClick-50.png');
+	});
 });
