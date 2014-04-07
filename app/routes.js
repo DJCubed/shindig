@@ -42,10 +42,7 @@ module.exports = function(app, passport) {
 	// 	});
 	// });
 
-  app.post('/logout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-	});
+
 
 };
 
