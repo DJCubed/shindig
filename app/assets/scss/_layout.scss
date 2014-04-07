@@ -68,44 +68,71 @@ body{
 
 	#loginBox{
 		width: 600px;
-		height: 150px;
-	@media screen and (max-width: 320px) {
+		height: 175px;
+	@media screen and (max-width: 280px) {
 		width: 100px;
 		height: 130px
 	}
-	@media screen and (min-width: 321px) and (max-width: 800px){
+	@media screen and (min-width: 281px) and (max-width: 800px){
 		width: 300px;
 		height: 150px;
 	}
 	@media screen and (min-width: 601px) and (max-width: 800px){
 		width: 500px;
-		height: 180px;
+		height: 200px;
 	}
 }
 	//email and password input
 	#loginInput{
-		margin-top: 70px;
+		margin-top: 105px;
 		background-color: red;
-		width:500px;
-		height: 25px;
-		@media screen and (min-width: 400px) and (max-width: 800px){
-			width: 175px;
-			height: 50px;
-			margin-left: 60px;
+		width:600px;
+		height: 50px;
+		@media screen and (min-width: 280px) and (max-width: 800px){
+			width: 300px;
+			height: 75px;
+			margin-top: 75px;
+			text-align: center;
+			//margin-left: 60px;
 		}
 		@media screen and (min-width: 601px) and (max-width: 800px){
 			width:400px;
 			margin-top: 110px;
 			margin-left: 50px;
+			height: 85px;
+			text-align: center;
 		}
 	}
 
 	#password {
-  	float:right;
+  		float:right;
+  		height: 35px;
+  		width:225px;
+  		font-size: 30px;
+  		@media screen and (min-width: 280px) and (max-width: 800px){
+			height: 30px;
+			font-size: 20px;
+			float:none;
+		}
+  		@media screen and (min-width: 601px) and (max-width: 800px){
+			float:none;
+  		}
 	}
 	
 	#email {
   	float:left;
+  	height: 35px;
+  	width:350px;
+  	font-size: 30px;
+  	@media screen and (min-width: 280px) and (max-width: 800px){
+			height: 30px;
+			font-size: 20px;
+			width:280px;
+			float:none;
+		}
+  	@media screen and (min-width: 601px) and (max-width: 800px){
+			float:none;
+  		}
 	}
 
 	#joinBtn{
@@ -128,7 +155,7 @@ body{
 		width:100px;
 		background-repeat: no-repeat;
 		background-position-x: center;
-		@media screen and (min-width: 400px) and (max-width: 600px){
+		@media screen and (min-width: 280px) and (max-width: 600px){
 			background-image: url('../Join-50.png');
 			height:60px;
 			width:60px;
@@ -143,7 +170,7 @@ body{
 		width:100px;
 		background-repeat: no-repeat;
 		background-position-x: center;
-		@media screen and (min-width: 400px) and (max-width: 600px){
+		@media screen and (min-width: 280px) and (max-width: 600px){
 			background-image: url('../Go-50.png');
 			height:60px;
 			width:60px;
@@ -165,7 +192,7 @@ body{
 		@media screen and (min-width: 426px) and (max-width: 450px){
 			width:50;
 		}*/
-		@media screen and (min-width: 400px) and (max-width: 600px){
+		@media screen and (min-width: 280px) and (max-width: 600px){
 			width:150px;
 		}
 		@media screen and (min-width: 601px) and (max-width: 800px){
