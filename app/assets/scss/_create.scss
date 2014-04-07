@@ -1,3 +1,35 @@
 .createInterests label{
   float: left;
+  margin-right: 1em;
 }
+
+.createInterests img {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.createShindig .formBox {
+  padding: 2em;
+}
+
+.buttonCreate {
+  box-shadow: 5px 5px 10px gray;
+  background-color: #C4D46A;
+  border-radius: .3em;
+  border: none;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2em;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  display: block;
+}
+
+.buttonCreate:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+// @media (max-width: 700px) {
+
+// }
