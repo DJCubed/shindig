@@ -11,17 +11,15 @@ General styles
   margin-top: 5px;
 }
 
-.mainContent {
-  border: 2px solid $brown;
-  border-left: none;
-  border-right: none;
-}
-
 .white {
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+
+/*-------------------
+Shindig List View
+--------------------*/
 .shindigContainer {
   border: 2px solid black;
   border-radius: 5px;
@@ -29,7 +27,22 @@ General styles
 }
 
 .shindigDetail {
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin-left: 35px;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
+}
+
+#titleDisplay {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: helvetica;
+}
+
+#descriptionDisplay {
+  display: none;
+}
+
+#descriptionDisplay.On {
+  display: block;
+  margin-bottom: 5px;
 }

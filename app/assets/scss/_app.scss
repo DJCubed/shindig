@@ -11,7 +11,6 @@ body{
 }
 
 .container {
-  background-image: url('../summer-tree.png');
   background-repeat: no-repeat;
   background-position-x: center;
 }
@@ -38,32 +37,20 @@ body{
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+#joinImg:hover{
+  background-image: url('../JoinHoverClick.png');
+}
+
+#loginImg:hover{
+  background-image: url('../GoHoverClick.png');
+}
+
 #loginEmail {
-  width: 150px;
-  height: 25px;
-  margin-left: 22px;
-  margin-right: 22px;
+
 }
 
 #loginPassword {
-  width: 150px;
-  height: 25px;
-  margin-left: 22px;
-  margin-right: 22px;
-}
 
-.loginButton {
-  width: 150px;
-  height: 25px;
-  margin-left: 22px;
-  margin-right: 22px;
-  margin-top: 10px;
-  background-color: $green;
-  color: black;
-  border-radius: 5px;
-  font-size: 1.1em;
-  border-color: $green;
-  border: none;
 }
 
 #createAccount {

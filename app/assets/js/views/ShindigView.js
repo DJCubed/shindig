@@ -8,6 +8,10 @@ module.exports = Backbone.View.extend({
   tagName: 'div',
   className: 'shindigContainer',
 
+  events: {
+    'click' : 'open'
+  },
+
   initialize: function() {
     this.render();
   },
@@ -17,5 +21,9 @@ module.exports = Backbone.View.extend({
     var template = require('../../templates/shindig.hbs');
     this.$el.html(template(shindigAttributes));
     return this;
+  },
+
+  open: function() {
+    $('#descriptionDisplay').toggleClass('On');
   }
 });
