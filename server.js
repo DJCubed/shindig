@@ -95,6 +95,11 @@ app.post('/login', passport.authenticate('local-login', {
   failureFlash : true,
 }));
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 
 var server = http.createServer(app);
 server.listen(3000, function(){ //create secure server here (see oaa secureServer.js)
