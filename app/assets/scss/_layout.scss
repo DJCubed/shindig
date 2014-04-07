@@ -22,13 +22,12 @@ body{
 
 .banner {
 	width: 100%;
-	height: 200px;
+	height: 230px;
 }
 
 #aboutShindig{
 		font-size: 35px;
 		text-align: center;
-		margin-top: 180px;
 	@media screen and (max-width: 320px) {
 		font-size: 1em;
 	}
@@ -38,6 +37,10 @@ body{
 	@media screen and (min-width: 801px) and (max-width: 1000px){
 		//font-size: 20px;
 	}
+}
+
+#aboutShindig p {
+	margin-top: 20px;
 }
 
 /*.mainContent {
