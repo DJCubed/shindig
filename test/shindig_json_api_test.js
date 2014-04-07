@@ -2,9 +2,9 @@
 
 var superagent = require('superagent');
 var chai = require('chai'),
-  expect = chai.expect,
-  should = chai.should();
-var app = require('../server').app;
+  expect = chai.expect;
+//  should = chai.should();
+//var app = require('../server').app;
 
 describe('shindigs JSON api', function(){
   var id;
