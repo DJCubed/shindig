@@ -2,9 +2,9 @@
 
 var superagent = require('superagent');
 var chai = require('chai'),
-  expect = chai.expect,
-  should = chai.should();
-var app = require('../server').app;
+  expect = chai.expect;
+//  should = chai.should();
+//var app = require('../server').app;
 
 describe('Users JSON api', function(){
   var id;
@@ -21,7 +21,7 @@ describe('Users JSON api', function(){
           password: 'valid'
         },
         interests: ['skiing', 'biking']
-      })
+      });
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body._id).to.not.be.eql(null);
@@ -32,11 +32,11 @@ describe('Users JSON api', function(){
       });
   });
 
-  // it('can find shindigs with common interests', function() {
-  //   superagent.get('http://localhost:3000/api/v1/users/' + id + interests).end(function(e, res){
-  //     expect(e).to.eql(null);
-  //   });
-  // });
+  it('can find shindigs with common interests', function() {
+    superagent.get('http://localhost:3000/api/v1/users/' + id + interests).end(function(e, res){
+      expect(e).to.eql(null);
+    });
+  });
 
   it('can get users collection', function(done){
     superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
