@@ -18,6 +18,7 @@ module.exports = Backbone.View.extend({
   },
 
   addAll: function() {
+    this.fetch();
     this.collection.forEach(this.addShindig);
   },
 

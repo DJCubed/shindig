@@ -34,6 +34,7 @@ module.exports = Backbone.View.extend({
     var newInterests = this.$('input:checkbox:checked').map(function () {
       return $(this).val();
       }).get();
+
     console.log(newInterests);
     this.model.save({
       date: newDate,
