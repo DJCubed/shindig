@@ -6,9 +6,11 @@ Base style sheet
 $Imports
 ------------------------------*/
 
-//@import "../../../bower_components/foundation/scss/foundation/components/grid";
+@import "../../../bower_components/foundation/scss/foundation/components/grid";
 @import "general.scss";
 //@import "reset.scss";
 @import "layout.scss";
 //@import "types.scss";
 @import "app.scss";
+@import "register.scss";
+@import "create.scss";

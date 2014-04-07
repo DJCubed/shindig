@@ -1,7 +1,7 @@
-<div class="small-12 column">
-
+<div class="formBox medium-12 column">
 	<form id="signupForm" action="/saveshindig" method="post">
 
+	<div class="formTexts medium-4 column">
 		<label for="titleCreate">Title</label><br>
 		<input class="newshindig" name="titleCreate" id="titleCreate" type="text"><br>
 
@@ -14,23 +14,31 @@
 		<label for="endTimeCreate">End Time</label><br>
 		<input class="shortInput" name="endTimeCreate" id="endTimeCreate" type="time"><br>
 
-		<label for="location">Where</label><br>
-		<input class="shortInput" name="location" id="location" type="text"><br>
+		<label for="locationCreate">Where</label><br>
+		<input class="shortInput" name="locationCreate" id="locationCreate" type="text"><br>
+	</div>
 
-		<label for="cbHipster" ><img src="Hipster-icon.png"><input type="checkbox" name="interest" id="cbHipster" value="hipster" >Hipster</label>
-		<label for="cbOutdoors" ><img src="Outdoors-icon.png"><input type="checkbox" name="interest" id="cbOutdoors" value="outdoors" >Outdoors</label>
-		<label for="cbGeek" ><input type="checkbox" name="interest" id="cbGeek" value="geek" >Geek<br><img src="Geek-icon.png"></label>
-		<label for="cbMusic" ><input type="checkbox" name="interest" id="cbMusic" value="music" >Music<br><img src="Music-icon.png"></label>
-		<label for="cbGaming" ><input type="checkbox" name="interest" id="cbGaming" value="gaming" >Gaming<br><img src="Gaming-icon.png"></label>
-		<label for="cbSports" ><input type="checkbox" name="interest" id="cbSports" value="sports" >Sports<br><img src="Sports-icon.png"></label>
-		<label for="cbDrink" ><input type="checkbox" name="interest" id="cbDrink" value="drink" >Drink<br><img src="Refreshment-icon.png"></label>
-		<label for="cbPets" ><input type="checkbox" name="interest" id="cbPets" value="pets" >Pets<br><img src="Pet-icon.png"></label>
+	<div class="medium-4 column">
+	<label for="descriptionCreate">Details</label>
+		<textarea form="signupForm" class="shortInput" name="descriptionCreate" id="descriptionCreate" type="textarea" rows="4" cols="40"></textarea>
+	</div>
 
-		<label for="descriptionCreate">Details</label><br>
-		<input class="shortInput" name="descriptionCreate" id="descriptionCreate" type="text"><br>
+	<div class="createInterests medium-8 column">
+		<label for="cbHipster"><img src="Hipster-icon.png"><br><input type="checkbox" name="interest" id="cbHipster" value="hipster" >Hipster</label>
+		<label for="cbOutdoors"><img src="Outdoors-icon.png"><br><input type="checkbox" name="interest" id="cbOutdoors" value="outdoors" >Outdoors</label>
+		<label for="cbGeek"><img src="Geek-icon.png"><br><input type="checkbox" name="interest" id="cbGeek" value="geek">Geek</label>
+		<label for="cbMusic"><img src="Music-icon.png"><br><input type="checkbox" name="interest" id="cbMusic" value="music">Music</label>
+		<label for="cbGaming"><img src="Gaming-icon.png"><br><input type="checkbox" name="interest" id="cbGaming" value="gaming" >Gaming</label>
+		<label for="cbSports"><img src="Sports-icon.png"><br><input type="checkbox" name="interest" id="cbSports" value="sports" >Sports</label>
+		<label for="cbDrink"><img src="Refreshment-icon.png"><br><input type="checkbox" name="interest" id="cbDrink" value="drink" >Drink</label>
+		<label for="cbPets"><img src="Pet-icon.png"><br><input type="checkbox" name="interest" id="cbPets" value="pets">Pets</label>
+	</div>
 
-		<button class="submit_button" type="submit">Save Shindig</button>
+
+	<div class="medium-8 column">
+		<button class="buttonCreate submit_button" type="submit">Save Shindig</button>
+	</div>
 
 	</form>
-
+</div>
 

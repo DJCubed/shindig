@@ -1,8 +1,9 @@
-<p class="centeredDescription col_4">Already registered? You can <a href="/login">log in here.</a></p>
+<p class="centeredDescription col_4">Already registered? You can <a href="/">log in here.</a></p>
 <p class="flash">{{message}}</p>
 
-<div class="small-12 column">
-
+<div class="formBox medium-12 column">
+<p>Answer these questions to find local events that fit your interests.</p>
+<div class="formTexts medium-4 column">
 	<form id="signupForm" action="/register" method="post">
 
 		<label for="name">First name</label><br>
@@ -22,10 +23,11 @@
 
 		<label for="confirmPassword">Confirm password</label><br>
 		<input name="confirmPassword" class="shortInput" id="confirmPassword" type="text"><br>
+</div>
 
-    <p>Answer these questions to find local events that fit your interests.</p>
-
-		<ol>
+    {{!-- <p>Answer these questions to find local events that fit your interests.</p> --}}
+<div class="medium-4 column">
+		<ul>
 			<li id="q1">Do you ride a fixie?<br>
         <input type="radio" name="interest1" value="hipster">Yes
         <input type="radio" name="interest1" value="">No
@@ -35,7 +37,7 @@
       <li id="q2">Do you like to hike?<br>
         <input type="radio" name="interest2" value="outdoors">Yes
         <input type="radio" name="interest2" value="">No
-        <input type="radio" name="interest2" value="outdoors">I am Bear Gryllls, does that answer the question...
+        <input type="radio" name="interest2" value="outdoors">I am Bear Gryllls
       </li>
 
       <li id="q3">Do you know Javascript?<br>
@@ -48,7 +50,11 @@
         <input type="radio" name="interest4" value="">Yes
         <input type="radio" name="interest4" value="music">No
       </li>
+      </ul>
 
+</div>
+<div class="medium-4 column">
+  <ul>
       <li id="q5">Have you beaten FFVII?<br>
         <input type="radio" name="interest5" value="gaming">Yes
         <input type="radio" name="interest5" value="">No
@@ -71,9 +77,13 @@
         <input type="radio" name="interest8" value="">No
         <input type="radio" name="interest8" value="pets">All hail the great cat!
       </li>
-	</ol>
+	</ul>
 
-	<button type="submit" class="button_register">Register</button>
+</div>
+<div class="medium-12 column">
+  <button type="submit" class="button_register buttonRegister">Register</button>
+</div>
+
 
 	</form>
 

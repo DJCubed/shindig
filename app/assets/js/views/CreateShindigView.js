@@ -26,7 +26,7 @@ module.exports = Backbone.View.extend({
     e.preventDefault();
     var newTitle = this.$('input[name=titleCreate]').val();
     var newDate = this.$('input[name=dateCreate]').val();
-    var newDescription = this.$('input[name=descriptionCreate]').val();
+    var newDescription = this.$('textarea[name=descriptionCreate]').val();
     var newStartsTime = this.$('input[name=startTimeCreate]').val();
     var newEndsTime = this.$('input[name=endTimeCreate]').val();
     var newLocation = this.$('input[name=locationCreate]').val();
