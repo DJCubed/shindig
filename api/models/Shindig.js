@@ -12,8 +12,7 @@ var schema = new mongoose.Schema({
   participants: [],
   description: '',
   interests: '',
-  //owner: ''
-  _owner : ''
+  owner: ''
 });
 
 module.exports = mongoose.model('Shindig', schema);
