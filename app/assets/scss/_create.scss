@@ -30,6 +30,8 @@
     cursor: hand;
 }
 
-// @media (max-width: 700px) {
-
-// }
+@media (max-width: 700px) {
+  #description {
+    width: 100%;
+  }
+}
