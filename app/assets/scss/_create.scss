@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 .createInterests label{
   float: left;
   margin-right: 1em;
@@ -15,7 +17,7 @@
 
 .buttonCreate {
   box-shadow: 5px 5px 10px gray;
-  background-color: #C4D46A;
+  background-color: $avocado;
   border-radius: .3em;
   border: none;
   font-family: 'Shadows Into Light', cursive;

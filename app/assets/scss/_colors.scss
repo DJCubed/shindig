@@ -2,34 +2,9 @@
 Colors
 --------------------*/
 
-
-/*
-@mixin lightGreenGradient_hover {
-  background-color: $lightGreen;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($lightGreen));
-  background-image: -moz-linear-gradient( $lightGreen);
-  background-image: -ms-linear-gradient( $lightGreen);
-  background-image: -o-linear-gradient( $lightGreen);
-  background-image: linear-gradient( $lightGreen);
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-$lightGreen: #2B9410;   // ADE0AB, 84cc81
-$green: #146101; //2F8F42, 2bab44
-$blue: #3631FF; // 2377fc
-$brown: #612301;
-$orange: #E0580E;
-$gray: #ccc9c4;
-*/
-
-
-$lightGreen: #2B9410;   // ADE0AB, 84cc81
-$green: #58A644; //2F8F42, 2bab44
-$blue: #3631FF; // 2377fc
-$brown: #1C610A;
+$lightGreen: #5BAB33;
+$darkGreen: #1C610A;
+$avocado: #C4D46A;
+$blue: #3631FF;
 $orange: #E0580E;
 $gray: #ccc9c4;

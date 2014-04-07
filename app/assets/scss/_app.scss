@@ -15,17 +15,10 @@ body{
   background-position-x: center;
 }
 
-#aboutShindig {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-size: 1em;
-}
-
 #loginBox {
   margin-left: auto;
   margin-right: auto;
-  border: 3px solid $brown;
+  border: 3px solid $darkGreen;
   border-radius: 10px;
   background-color: rgba(28, 97, 10, 0.9);
 }
