@@ -20,11 +20,3 @@ $(function() {
   
 });
 
-//Click functions
-$(function(){
-
-	$('#loginImg').click(function(){
-	loginform.submit();
-  });
-
-});
