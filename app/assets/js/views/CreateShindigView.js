@@ -30,7 +30,6 @@ module.exports = Backbone.View.extend({
     var newStartsTime = this.$('input[name=startTimeCreate]').val();
     var newEndsTime = this.$('input[name=endTimeCreate]').val();
     var newLocation = this.$('input[name=locationCreate]').val();
-    var newOwner = "tester person";
     var newInterests = this.$('input:checkbox:checked').map(function () {
       return $(this).val();
       }).get();
@@ -40,7 +39,6 @@ module.exports = Backbone.View.extend({
       start_time: newStartsTime,
       end_time: newEndsTime,
       location: newLocation,
-      owner: newOwner,
       title: newTitle,
       description: newDescription,
       participants: [],
