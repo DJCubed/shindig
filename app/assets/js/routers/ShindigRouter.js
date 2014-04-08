@@ -14,8 +14,6 @@ module.exports = Backbone.Router.extend({
            'shindigs': 'index',
           'newshindig': 'create'},
 
-
-
   show: function(id) {
     console.log(id);
   },
@@ -33,25 +31,9 @@ module.exports = Backbone.Router.extend({
   },
 
   index: function() {
-    console.log('now in shindigsrouterss');
-    //$('.mainContent').html('hello not the world');
-    //$('mainContent').html(this.shindigListView.el);
-    // var shindigList = new ShindigCollection();
-    // var shindigListView = new ShindigCollectionView({collection: shindigList});
     this.shindigList.fetch();
-    console.dir(this.shindigListView.el);
-    // if ($('.innerContainer')) {
-    //   console.log("innerContainer");
-    //   $('.innerContainer').replaceWith(this.shindigListView.el);
-    // } else {
-    //   console.log('createShindig');
-    //   $('.createShindig' || '.innerContainer').replaceWith(this.shindigListView.el);
-    // }
-    //$('.createShindig' || '.innerContainer').replaceWith(this.shindigListView.el);
     $('.createShindig').replaceWith(this.shindigListView.el);
     $('.innerContainer').replaceWith(this.shindigListView.el);
-    //$('.innerContainer').html("hello yall");
-    //$('.createShindig').replaceWith("hello");
   },
 
   initialize: function() {
