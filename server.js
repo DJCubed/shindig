@@ -35,18 +35,18 @@ app.configure('development', function(){
   app.use(express.logger('dev'));//log request to terminal
 });
 
-//mongoose.connect('mongodb://localhost/shindig-development');
+mongoose.connect('mongodb://heroku_app23901847:vih8fhrsa0dl1gk08bioir02it@ds043457.mongolab.com:43457/heroku_app23901847');
 
 var mongoUri = process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
   'mongodb://heroku_app23901847:vih8fhrsa0dl1gk08bioir02it@ds043457.mongolab.com:43457/heroku_app23901847';
 
-mongo.Db.connect(mongoUri, function (err, db) {
-  db.collection('mydocs', function(er, collection) {
-    collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-    });
-  });
-});
+// mongoose.connect(mongoUri, function (err, db) {
+//   db.collection('mydocs', function(er, collection) {
+//     collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
+//     });
+//   });
+// });
 
 // Make sure a user is logged in
 function isLoggedIn(req, res, next) {
