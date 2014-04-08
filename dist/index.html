@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shindig | Login</title>
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" type="css/text" />
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+  <!-- scripts -->
+  <script src="browser.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+  <div class="banner">
+  <div class="bannerInner small-12 column"></div>
+    <div class="small-12 large-6 column" id="navbar">
+          <button class="navButton" type="submit"><a href="/#shindigs">Show Shindigs</a></button>
+          <button class="navButton" type="submit"><a href="/#newshindig">Create Shindig</a></button>
+          <button class="navButton" type="submit"><a href="/logout">Log Out</a></button>
+    </div>
+  </div>
+
+  <div class="mainContent">
+
+    <div class="innerContainer">
+
+      <div class="row"><!-- 1st row -->
+        <div id="aboutShindig">
+          <p>Meet people like you, doing the stuff you do.</p>
+        </div>
+      </div><!-- end 1st row -->
+
+      <div class="row"><!-- 2nd row -->
+        <div class="small-12 large-12 column">
+
+          <form id="loginform" action = "/login" method = "post">
+            <div id="loginBox">
+              <button id="joinBtn" type="submit" class="backbone" ><div id="joinImg"></div></button>
+              <div id="signIn">Sign In</div>
+              <button id="loginBtn" type="submit"><div id="loginImg"></div></button>
+              <div id="loginInput">
+                <input id="email" type="text"  name="email" placeholder="Email">
+                <input id="password" type="text" name="password" placeholder="Password">
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div><!-- end 2nd row -->
+
+      <div class="row"><!-- 3rd row -->
+      </div><!-- end 3rd row -->
+
+    </div><!-- end innerContainer -->
+
+  </div><!-- end mainContent -->
+
+</div><!-- end container -->
+
+
+</body>
+</html>

@@ -14,8 +14,7 @@
     "passport-twitter": "^1.0.2",
     "passport-google-oauth":"~0.1.5",
     "connect-flash": "^0.1.1",
-    "consolidate": "^0.10.0",
-    "grunt": "*"
+    "consolidate": "^0.10.0"
   },
   "devDependencies": {
     "grunt-simple-mocha": "^0.4.0",
@@ -40,8 +39,7 @@
     "superagent": "*"
   },
   "scripts": {
-    "test": "grunt travis",
-    "postInstall": "./node_modules/grunt/bin/grunt build:dev"
+    "test": "grunt travis"
   },
   "repository": {
     "type": "git",
