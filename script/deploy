@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
 git push heroku master
 heroku run npm install
-heroku run bower install
 heroku ps:restart
