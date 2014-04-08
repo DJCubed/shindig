@@ -1,3 +1,3 @@
 web: npm install
-web: bow install
+web: bower install
 web: node server.js
