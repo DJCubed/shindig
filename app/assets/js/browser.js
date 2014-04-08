@@ -17,7 +17,6 @@ $(function() {
     e.preventDefault();
     appRouter.navigate('register', {trigger: true});
   });
-  
 });
 
 $(function(){
