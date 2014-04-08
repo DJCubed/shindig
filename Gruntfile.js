@@ -193,7 +193,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('default', ['test','watch:express']);
   grunt.registerTask('build:dev',  ['clean:dev', 'concurrent:buildDev', 'copy:dev']);
-  //grunt.registerTask('build:prod', ['clean:prod', 'browserify:prod', 'copy:prod']);
+  grunt.registerTask('build:prod', ['clean:prod', 'browserify:prod', 'copy:prod']);
   grunt.registerTask('test', ['simplemocha:dev', 'casper']);
   grunt.registerTask('travis', ['jshint', 'simplemocha:dev', 'casper']);
   // grunt.registerTask('travis', ['jshint', 'mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);

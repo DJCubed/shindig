@@ -15,10 +15,18 @@ app.engine('hbs', cons.handlebars);
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/app/assets/templates');
 
+app.configure('development', function(){
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.errorHandler());
+  app.use(express.logger('dev'));//log request to terminal
+});
+
+app.configure('production', function() {
+  app.use(express.static(path.join(__dirname, 'dist')));
+})
 
 app.configure(function(){
   app.use(express.bodyParser());//get html forms info
-  app.use(express.static(path.join(__dirname, 'build')));
   app.use(express.cookieParser());//For authorization
   app.use(express.session({
     secret: 'shindigisgoodshindigisdopeshin'
@@ -27,11 +35,6 @@ app.configure(function(){
   app.use(passport.session());//to persist login sessions
   app.use(flash());//for session flash messages
   app.use(app.router);
-});
-
-app.configure('development', function(){
-  app.use(express.errorHandler());
-  app.use(express.logger('dev'));//log request to terminal
 });
 
 mongoose.connect('mongodb://localhost/shindig-development');
