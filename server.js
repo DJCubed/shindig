@@ -15,6 +15,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.engine('hbs', cons.handlebars);
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/app/assets/templates');
+app.set('port', process.env.PORT || 3000);
 
 
 app.configure(function(){
@@ -114,6 +115,6 @@ app.get('/logout', function(req, res){
 
 
 var server = http.createServer(app);
-server.listen(3000, function(){ //create secure server here (see oaa secureServer.js)
+server.listen(app.get('port'), function(){ //create secure server here (see oaa secureServer.js)
   console.log('server running');
 });
