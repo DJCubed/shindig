@@ -17,6 +17,19 @@ $(function() {
     e.preventDefault();
     appRouter.navigate('register', {trigger: true});
   });
+
+  $('.shindigs_route').click(function(e) {
+    e.preventDefault();
+    appRouter.navigate('shindigs', {trigger: true});
+  });
+
+  $('.createshindigs_route').click(function(e) {
+    e.preventDefault();
+    console.log('browser');
+    appRouter.navigate('newshindig', {trigger: true});
+  });
+
+
   
 });
 
