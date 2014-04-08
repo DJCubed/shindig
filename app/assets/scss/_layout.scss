@@ -155,12 +155,15 @@ body{
 		background-image: url('../Join-50.png');
 		height:60px;
 		width:60px;
-		:hover{
-  			background-image: url('../JoinHoverClick.png');
 		}
 	}
 
-}
+	#joinImg:hover{
+  		background-image: url('../JoinHoverClick.png');
+  		@media screen and (min-width: 280px) and (max-width: 600px){
+			background-image: url('../JoinHoverClick-50.png');
+  		}
+	}
 
 #loginImg{
 	background-image: url('../Go.png');
@@ -175,6 +178,13 @@ body{
 	}
 
 }
+
+	#loginImg:hover{
+  		background-image: url('../GoHoverClick.png');
+  		@media screen and (min-width: 280px) and (max-width: 600px){
+			background-image: url('../GoHoverClick-50.png');
+  		}
+	}
 
 
 #signIn{

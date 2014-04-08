@@ -20,3 +20,6 @@ $(function() {
 
 });
 
+//Click events
+
+
