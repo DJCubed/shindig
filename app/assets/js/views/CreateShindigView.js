@@ -3,6 +3,8 @@
 var Backbone = require('backbone');
 var $        = require('jquery');
 Backbone.$   = $;
+// var ShindigRouter = require('../routers/ShindigRouter');
+var app = new Backbone.Router;
 
 module.exports = Backbone.View.extend({
   tagName: 'div',
@@ -19,11 +21,13 @@ module.exports = Backbone.View.extend({
   },
 
   events: {
-    submit: "save"
+    "click .buttonCreate": "save"
   },
 
   save: function(e) {
     e.preventDefault();
+    console.log("we are saving");
+
     var newTitle = this.$('input[name=titleCreate]').val();
     var newDate = this.$('input[name=dateCreate]').val();
     var newDescription = this.$('textarea[name=descriptionCreate]').val();
@@ -33,8 +37,6 @@ module.exports = Backbone.View.extend({
     var newInterests = this.$('input:checkbox:checked').map(function () {
       return $(this).val();
       }).get();
-
-    console.log(newInterests);
     this.model.save({
       date: newDate,
       start_time: newStartsTime,
@@ -45,8 +47,9 @@ module.exports = Backbone.View.extend({
       participants: [],
       interests: newInterests
       }, {
-      success: function() {
-        Backbone.history.navigate('shindigs', {trigger: true});
+      success: function (model, response) {
+        //this option is the closest: it gets the full list including the latest addition
+        Backbone.history.navigate('shindigs', {trigger: true, replace: true});
       },
       error: function() {
         alert("There were errors saving shindig");
