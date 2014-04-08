@@ -20,8 +20,7 @@ exports.createShindig = function(req, res){
   res.setHeader('Content-Type', 'application/json');
   console.log(req);
   var shindig = new Shindig(req.body);
-  shindig.owner = req.user._id;
-
+  shindig.owner = req.user.username;
   shindig.save(function(err, responseShindig){
     if(err){
       res.writeHead(500);
