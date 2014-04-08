@@ -41,7 +41,7 @@
   },
   "scripts": {
     "test": "grunt travis",
-    "postInstall": "./node_modules/grunt/bin/grunt build:prod"
+    "postInstall": "./node_modules/grunt/bin/grunt build:dev"
   },
   "repository": {
     "type": "git",
