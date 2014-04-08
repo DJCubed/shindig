@@ -17,10 +17,18 @@ app.set('view engine', 'hbs');
 app.set('views', __dirname + '/app/assets/templates');
 app.set('port', process.env.PORT || 3000);
 
+app.configure('development', function(){
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.errorHandler());
+  app.use(express.logger('dev'));//log request to terminal
+});
+
+app.configure('production', function() {
+  app.use(express.static(path.join(__dirname, 'dist')));
+})
 
 app.configure(function(){
   app.use(express.bodyParser());//get html forms info
-  app.use(express.static(path.join(__dirname, 'build')));
   app.use(express.cookieParser());//For authorization
   app.use(express.session({
     secret: 'shindigisgoodshindigisdopeshin'
@@ -31,23 +39,7 @@ app.configure(function(){
   app.use(app.router);
 });
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-  app.use(express.logger('dev'));//log request to terminal
-});
-
-mongoose.connect('mongodb://heroku_app23901847:vih8fhrsa0dl1gk08bioir02it@ds043457.mongolab.com:43457/heroku_app23901847');
-
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://heroku_app23901847:vih8fhrsa0dl1gk08bioir02it@ds043457.mongolab.com:43457/heroku_app23901847';
-
-// mongoose.connect(mongoUri, function (err, db) {
-//   db.collection('mydocs', function(er, collection) {
-//     collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-//     });
-//   });
-// });
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/shindig');
 
 // Make sure a user is logged in
 function isLoggedIn(req, res, next) {
