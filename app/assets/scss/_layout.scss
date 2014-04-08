@@ -43,19 +43,6 @@ body{
 	margin-top: 20px;
 }
 
-/*.mainContent {
-  width: 100%;
-  height: 80%;
-}
-
-.innerContainer {
-  width: 100%;
-  height: 80%;
-
-}
-*/
-
-
 #loginBox{
 		width: 600px;
 		height: 175px;
@@ -168,7 +155,9 @@ body{
 		background-image: url('../Join-50.png');
 		height:60px;
 		width:60px;
-		//:hover: url('../JoinHoverClick-50.png');
+		:hover{
+  			background-image: url('../JoinHoverClick.png');
+		}
 	}
 
 }

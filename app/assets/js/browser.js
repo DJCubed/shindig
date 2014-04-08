@@ -17,10 +17,6 @@ $(function() {
     e.preventDefault();
     appRouter.navigate('register', {trigger: true});
   });
+
 });
 
-$(function(){
-	$('#joinBtn').mousedown(function(){
-		$('#joinImg').css("background-image", '../JoinHoverClick-50.png');
-	});
-});

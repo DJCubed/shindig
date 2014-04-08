@@ -26,10 +26,6 @@ module.exports = Backbone.Router.extend({
   },
 
 
-  start: function() {
-    Backbone.history.start({pushState: true});
-  },
-
   index: function() {
     this.shindigList.fetch();
     $('.createShindig').replaceWith(this.shindigListView.el);
