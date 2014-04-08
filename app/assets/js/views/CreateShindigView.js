@@ -27,8 +27,6 @@ module.exports = Backbone.View.extend({
   save: function(e) {
     e.preventDefault();
     console.log("we are saving");
-    //alert("save i shappening");
-    //var that = this;
 
     var newTitle = this.$('input[name=titleCreate]').val();
     var newDate = this.$('input[name=dateCreate]').val();
@@ -52,21 +50,7 @@ module.exports = Backbone.View.extend({
       success: function (model, response) {
         //this option is the closest: it gets the full list including the latest addition
         Backbone.history.navigate('shindigs', {trigger: true, replace: true});
-        //obj.trigger('shindigs', model);
-        //window.shindigRouter.navigate('shindigs', {trigger: true, replace: true});
-        //window.shindigRouter.index();
-        // app.navigate('shindigs', {trigger: true, replace: true});
-        // app.index();
       },
-      // success: function() {
-      //   alert("saving success");
-      //   console.log("saving success");
-      //   //e.preventDefault();
-      //   //router = new ShindigRouter();
-      //   Backbone.history.navigate('shindigs', {trigger: true});
-      //   //window.shindigRouter.navigate('shindigs', {trigger: true});
-      //   //window.shindigRouter.index();
-      // },
       error: function() {
         alert("There were errors saving shindig");
       }
