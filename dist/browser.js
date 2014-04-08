@@ -28,7 +28,7 @@ var Backbone = require("./../../../../bower_components/backbone/backbone.js");
 
 module.exports = Backbone.Model.extend({
   idAttribute: '_id',
-  urlRoot: 'http://localhost:3000/api/v1/shindigs' || 'http://dj3shindig.herokuapp.com/api/v1/shindigs',
+  urlRoot: 'http://dj3shindig.herokuapp.com/api/v1/shindigs',
   defaults: {
     date: '',
     start_time: '',
@@ -49,7 +49,7 @@ var Shindig = require('./Shindig');
 
 module.exports = Backbone.Collection.extend({
   model: Shindig,
-  url: 'http://localhost:3000/api/v1/shindigs' || 'http://dj3shindig.herokuapp.com/api/v1/shindigs',
+  url: 'http://dj3shindig.herokuapp.com/api/v1/shindigs',
   operator: 'date'
 });
 
@@ -60,7 +60,7 @@ var bcrypt = require('bcrypt-nodejs');
 
 module.exports = Backbone.Model.extend({
   idAttribute: '_id',
-  urlRoot: 'http://localhost:3000/api/v1/users' || 'http://dj3shindig.herokuapp.com/api/v1/users',
+  urlRoot: 'http://dj3shindig.herokuapp.com/api/v1/users',
   defaults: {
     first_name: '',
     last_name: '',
