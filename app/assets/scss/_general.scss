@@ -69,3 +69,24 @@ Shindig List View
   margin-right: 35px;
   border-radius: 5px;
 }
+
+/*-------------------
+Nav Bar View
+--------------------*/
+.navButton {
+  background-color: $avocado;
+  border-radius: .3em;
+  border: none;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.5em;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  display: block;
+  float: right;
+}
+
+@media (max-width: 700px){
+  .bannerInner {
+    margin-top: 11em;
+  }
+}
