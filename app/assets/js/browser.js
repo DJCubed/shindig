@@ -20,8 +20,3 @@ $(function() {
 
 });
 
-$(function(){
-	$('#joinBtn').mousedown(function(){
-		$('#joinImg').css("background-image", '../JoinHoverClick-50.png');
-	});
-});
