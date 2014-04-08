@@ -2,9 +2,11 @@
   <div class="shindigDetail" id="dateDisplay">{{date}}, {{start_time}}-{{end_time}}</div>
   <!-- <p class="time"></p> -->
   <div class="shindigDetail" id="titleDisplay">{{title}}</div>
-  <div class="shindigDetail" id="ownerDisplay">{{owner}}</div>
   <div class="shindigDetail" id="locationDisplay">{{location}}</div>
-  <div class="shindigDetail" id="descriptionDisplay">{{description}}</div>
+  <div class="ownerDescriptionContainer">
+    <div class="shindigDetail" id="ownerDisplay"><span class="helvetica">planner:</span> {{owner}}</div>
+    <div class="shindigDetail" id="descriptionDisplay"><span class="helvetica">deets:</span> {{description}}</div>
+  </div>
 </div>
 <div class="icons">
 

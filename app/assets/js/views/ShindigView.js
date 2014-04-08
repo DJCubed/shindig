@@ -24,6 +24,6 @@ module.exports = Backbone.View.extend({
   },
 
   open: function() {
-    $('#descriptionDisplay').toggleClass('On');
+    this.$el.find('.ownerDescriptionContainer').toggleClass('On');
   }
 });

@@ -16,12 +16,6 @@ module.exports = function(app, passport) {
 		});
 	});
 
-  app.post('/logout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-	});
-
-};
 
 // Make sure a user is logged in
 function isLoggedIn(req, res, next) {

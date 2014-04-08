@@ -16,6 +16,10 @@ General styles
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+.helvetica {
+  font-family: helvetica;
+}
+
 
 /*-------------------
 Shindig List View
@@ -23,13 +27,18 @@ Shindig List View
 .shindigContainer {
   border: 2px solid black;
   border-radius: 5px;
-  background-color: white;
+  background-color: $lightGreen;
 }
+
 
 .shindigDetail {
   font-size: 1.2em;
   margin-left: 35px;
-  margin-bottom: 0px;
+  margin-bottom: 4px;
+}
+
+#dateDisplay {
+  margin-top: 4px;
 }
 
 #titleDisplay {
@@ -38,11 +47,25 @@ Shindig List View
   font-family: helvetica;
 }
 
+#ownerDisplay {
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
 #descriptionDisplay {
+  margin-left: 5px;
+}
+
+.ownerDescriptionContainer {
   display: none;
 }
 
-#descriptionDisplay.On {
+.ownerDescriptionContainer.On {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  background-color: $avocado;
+  margin-left: 35px;
+  margin-right: 35px;
+  border-radius: 5px;
 }
