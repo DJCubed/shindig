@@ -10,6 +10,6 @@ module.exports = {
   },
 
   prod: {
-    'url': 'mongodb://localhost/shindig-prod'
+    'url': 'mongodb://heroku_app23901847:vih8fhrsa0dl1gk08bioir02it@ds043457.mongolab.com:43457/heroku_app23901847'
   }
 };
