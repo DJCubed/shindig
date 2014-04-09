@@ -8,7 +8,7 @@ var cons = require('consolidate');
 var users = require('./api/routes/users');
 var passport = require('passport');
 var mongoose = require('mongoose');
-var mongo = require('mongodb');
+//var mongo = require('mongodb');
 var flash = require('connect-flash');
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -25,7 +25,7 @@ app.configure('development', function(){
 
 app.configure('production', function() {
   app.use(express.static(path.join(__dirname, 'dist')));
-})
+});
 
 app.configure(function(){
   app.use(express.bodyParser());//get html forms info
