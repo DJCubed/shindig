@@ -21,7 +21,7 @@ describe('Users JSON api', function(){
           password: 'valid'
         },
         interests: ['skiing', 'biking']
-      });
+      })
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body._id).to.not.be.eql(null);
@@ -33,8 +33,9 @@ describe('Users JSON api', function(){
   });
 
   it('can find shindigs with common interests', function() {
-    superagent.get('http://localhost:3000/api/v1/users/' + id + interests).end(function(e, res){
+    superagent.get('http://localhost:3000/api/v1/shindigs').end(function(e, res){
       expect(e).to.eql(null);
+      expect(res).to.not.eql(null);
     });
   });
 

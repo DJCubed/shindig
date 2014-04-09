@@ -1,9 +1,9 @@
 'use strict';
 /*global casper*/
 
-casper.test.begin('Is app 200 ok?', 3, function suite(test) {
+casper.test.begin('Is register view ok?', 3, function suite(test) {
 
-  casper.start('http://localhost:3000', function() {
+  casper.start('http://localhost:3000/#register', function() {
     test.assertHttpStatus(200);
   });
 
@@ -11,8 +11,8 @@ casper.test.begin('Is app 200 ok?', 3, function suite(test) {
     test.assertTitle('Shindig | Login', 'title is Shindig');
   });
 
-  casper.then(function(){
-    test.assertExists('div#loginBox');
+  casper.then(function() {
+    test.assertExists('div.formTexts');
   });
 
   casper.run(function(){
