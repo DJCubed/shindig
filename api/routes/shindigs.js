@@ -11,6 +11,7 @@ exports.collection = function(req, res){
       res.writeHead(500);
       res.send({'error': err});
     } else{
+      console.log(shindigs);
       res.send(shindigs);
     }
   });
