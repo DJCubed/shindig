@@ -8,7 +8,6 @@ var cons = require('consolidate');
 var users = require('./api/routes/users');
 var passport = require('passport');
 var mongoose = require('mongoose');
-//var mongo = require('mongodb');
 var flash = require('connect-flash');
 require('./config/passport')(passport); // pass passport for configuration
 
